@@ -4,6 +4,8 @@
 #include <chrono>
 #include <vector>
 #include "Arithmpz.h"
+#include <math.h>
+#include <typeinfo>
 
 #define MPZ mpz_class
 
@@ -89,21 +91,66 @@ MPZ CRT2KCOURS(vector<MPZ> A, vector<MPZ> B){
 	return A[A.size()-1];
 }
 
+vector<MPZ> Lagrange(vector<MPZ> A, vector<MPZ> B){
+	vector<MPZ> res(A.size() - 1);
+	res[0] = 1;
+	for(int i = 0; i < A.size(); ++i){
+		cout << "début res" << endl;
+		for(int l = 0; l < res.size(); ++l)
+			cout << res[l] << endl;
+		cout << "fin res" << endl;
+		vector<MPZ> globalTempPoly(res.size());
+		globalTempPoly[0] = 1;
+		MPZ yi = B[i], temp = 1;
+		
+		for(int j = 0; j < A.size(); ++j){
+			if(i == j)
+				continue;
+			temp *= (A[i] - A[j]);
+			vector<MPZ> tempPoly(2);
+			tempPoly[1] = 1;
+			tempPoly[0] = A[j]*(-1);
+			globalTempPoly = model::mult(globalTempPoly, tempPoly);
+		}
+		model::mult(globalTempPoly, (yi / temp));
+		
+		
+		
+		res = model::add(res, globalTempPoly);
+	}
+}
+
 int main(int argc, char **argv)
 
 { 
+	MPZ a(1), b(2);
+	cout << (a+b) << endl;
+	
+	/*vector<MPZ> A(8);
+	for(int i = 0; i < 8; ++i)
+		A[i] = pow(256, i) + pow(i, 256);
+	
+	vector<MPZ> B(8);
+	for(int i = 0; i < 8; ++i){
+		MPZ a(pow(256, i));
+		MPZ b(pow(i, 256));
+		B[i] = (a+b)%43;
+	}*/
+	
+	//cout << CRT2KCOURS(A, B) << endl;
 	
 	vector<MPZ> A(3);
 	A[0] = 0;
 	A[1] = 1;
-	A[2] = 4;
-	
+	A[2] = -1;
 	vector<MPZ> B(3);
-	B[0] = 4;
-	B[1] = 13;
-	B[2] = 7;
+	B[0] = 1;
+	B[1] = 4;
+	B[2] = 0;
 	
-	cout << CRT2KCOURS(A, B) << endl;
+	vector<MPZ> res = Lagrange(A, B);
+	for(int i = 0; i < res.size(); ++i)
+		cout << res[i] << endl;
 
     return 0;
 
