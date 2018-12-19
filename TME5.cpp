@@ -91,32 +91,76 @@ MPZ CRT2KCOURS(vector<MPZ> A, vector<MPZ> B){
 	return A[A.size()-1];
 }
 
-vector<MPZ> Lagrange(vector<MPZ> A, vector<MPZ> B){
-	vector<MPZ> res(A.size() - 1);
+vector<MPZ> Lagrange(vector<MPZ> X, vector<MPZ> Y){
+	vector<MPZ> res(X.size() - 1);
 	res[0] = 1;
-	for(int i = 0; i < A.size(); ++i){
-		cout << "début res" << endl;
-		for(int l = 0; l < res.size(); ++l)
-			cout << res[l] << endl;
-		cout << "fin res" << endl;
-		vector<MPZ> globalTempPoly(res.size());
-		globalTempPoly[0] = 1;
-		MPZ yi = B[i], temp = 1;
 		
-		for(int j = 0; j < A.size(); ++j){
+	cout << "début x" << endl;
+	for(int l = 0; l < X.size(); ++l)
+		cout << X[l] << endl;
+	cout << "fin x" << endl;
+		
+	cout << "début y" << endl;
+	for(int l = 0; l < Y.size(); ++l)
+		cout << Y[l] << endl;
+	cout << "fin y" << endl;
+	
+	for(int i = 0; i < X.size(); ++i){
+		
+		vector<MPZ> globalTempPoly(1);
+		globalTempPoly[0] = 1;
+		MPZ yi = Y[i], temp = 1;
+		
+		for(int j = 0; j < X.size(); ++j){
 			if(i == j)
 				continue;
-			temp *= (A[i] - A[j]);
+			temp *= (X[i] - X[j]);
+		}
+		
+		cout << "temp = " << temp << endl;
+		cout << "yi = " << yi << endl;
+				
+		for(int j = 0; j < X.size(); ++j){
+			if(i == j)
+				continue;
 			vector<MPZ> tempPoly(2);
 			tempPoly[1] = 1;
-			tempPoly[0] = A[j]*(-1);
+			tempPoly[0] = X[j]*(-1);
+		
+			cout << "début tempPoly au tour de boucle " << i << endl;
+			for(int l = 0; l < tempPoly.size(); ++l)
+				cout << tempPoly[l] << endl;
+			cout << "fin tempPoly" << endl;
+			
 			globalTempPoly = model::mult(globalTempPoly, tempPoly);
+		
+			cout << "début globalTempPoly au tour de boucle " << i  << endl;
+			for(int l = 0; l < globalTempPoly.size(); ++l)
+				cout << globalTempPoly[l] << endl;
+			cout << "fin globalTempPoly" << endl;
 		}
+		
+		cout << "apès la boucle : début globalTempPoly" << endl;
+		for(int l = 0; l < globalTempPoly.size(); ++l)
+			cout << globalTempPoly[l] << endl;
+		cout << "apès la boucle : fin globalTempPoly" << endl;
+		
+		cout << "yi / temp =" << (yi/temp) << endl;
+		
 		model::mult(globalTempPoly, (yi / temp));
 		
 		
 		
 		res = model::add(res, globalTempPoly);
+		
+		
+		cout << "après le " << i << "-ème tour de boucle, on a " << endl;
+		
+		cout << "début res" << endl;
+		for(int l = 0; l < res.size(); ++l)
+			cout << res[l] << endl;
+		cout << "fin res" << endl;
+		
 	}
 }
 
