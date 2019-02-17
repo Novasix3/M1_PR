@@ -1,0 +1,35 @@
+Exercice 1:
+
+1) Etant donné que les champs des fonctions sont écrits en durs dans un fichier, cela n'est pas possible.
+Cependant, on peut créer des structures contenant une structure de liste doublement chainée minimale, qui sera ensuite mise dans un container, et on pourra alors obtenir l'adresse du container en jouant sur les pointeurs et offset.
+
+3) On modifie donc les champs next et prev de la structure commit en les enlevant, puis on ajouter un champ list_head, qui sera utilisé dans les diverses fonctions. On simplifie par la conséquente plusieurs fonctions telles que commitOf, insert_commit, display_history, infos, ...
+
+Exercice 2:
+
+1) Il faut faire attention au type de commit fait : si c'est un major, on ajoute à la liste des major que l'on récupère depuis le from->major_parent le nouveau commit, et pour le minor, le major_parent est le même que celui du from.
+
+2) La recherche change pour devenir : recherche du major en question avec la major_list, si on ne trouve rien, on sort en disant que l'on a pas trouvé le commit cherché. Sinon, on cherche dans la première liste le bon minor, si on le trouve, display_commit avec celui-ci, sinon, on dit que l'on a rien trouvé.
+
+Exercice 3:
+
+1) Valgrind n'est pas content car aucun free n'est jamais fait.
+
+2) On créé une fonction freeHistory() qui va parcourir la liste des commit, les free, puis free la commit_list, et enfin, free l'history. On oublie pas aussi de free tout commit qui se ferait delete.
+
+Exercice 4:
+
+1) Cela pose un problème de conception car la fonction displayCommit doit seulement afficher ses quelques informations et appeler displayVersion. Si on faisait comme cela, cela impliquerait que cette fonction fait plus que ce qu'elle doit faire, ce qui n'est pas son travail.
+
+2) On ajoute le champ display à la struct commit, puis on crée la fonction demandée, crée une autre fonction display_minor_commit pour être complet. Puis j'ai décidé de garder la fonction display_commit, qui elle va appeller le champ display du commit donné en paramètre. Cela permet de garder le fait que display_history appelle display_commit avec un commit, et d'éviter que display_history appelle directement un champ de commit, alors qu'il n'est pas sensé le voir. On modifie également l'affichage demandé, en modifiant la fonction display_version dans version.c avec un test sur le major. On pourrait faire encore un pointeur de fonction dans version avec deux fonctions d'affichage différentes, mais je n'ai pas jugé nécessaire d'aller aussi loin.
+
+3) On ajoute le champ extract à commit, et de la même manière que précédemment, on garde del_commit, qui appelera la fonction extract de commit. On fait cela dans le même but que pour commit : garder une frontière entre history et commit, à la manière de la programmation objet.
+La fonction extract_minor se contente d'appeller freeCommit(), tandis que la fonction extract_major va parcourir la liste des commit jusqu'à trouver un commit de major différent de celui de la victime. En même temps, on fait freeCommit() à chaque fois.
+
+4) On crée une nouvelle structure (que j'ai laissé dans commit.h, n'ayant pas voulu aller aussi loin alors que cela suffit parfaitement pour ce que l'on fait) et on met les deux champs initialement dans la struct commit. On modifie ensuite les différentes fonction pour qu'elles appellents les champs extract et display de la struct ops en paramètre du commit. On n'oublie pas de free cette petite structure quand on free un commit.
+
+Exercice 5:
+
+1) On voie directement qu'il y a un problème dans le création des comment, du fait que la création de test2 donne un author_size négatif et test3 un text_size négatif, ce qui provoquera des malloc de tailles négatives. Il faudrait pour cela faire des tests sur les tailles de chaque paramètre, et n'allouer que ce qui est possible. Ensuite, on voie également qu'il n'y a pas de free, donc il y a de larges fuites mémoires.
+
+2) On modifie donc new_comment pour vérifier chaque taille. Si une des tailles est négative, on utilise les pointeurs pour évaluer la taille du char* correspondant. On assigne ensuite cette nouvelle taille au malloc, +1 pour avoir le '\0', puis on memcpy. Ainsi, la fonction fonction normalement en faisant de l'évaluation à la vollée des tailles nécessaires, sans modification les allocations et copy. Surtout, il n'a pas été nécessaire de modifier le testComment.c .

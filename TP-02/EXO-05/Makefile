@@ -3,12 +3,15 @@
 
 CHECK_PATCH=./checkpatch.pl --no-tree
 
-all : testHistory
+all : testHistory testComment
 
 %.o : %.c %.h
 	gcc -g -Wall -c $<
 
 testHistory : testHistory.c version.o commit.o history.o
+	gcc -g -Wall $^ -o $@
+
+testComment : testComment.c comment.o
 	gcc -g -Wall $^ -o $@
 
 check : 
@@ -17,4 +20,4 @@ check :
 	done
 
 clean :
-	rm -rf *.o testHistory
+	rm -rf *.o testHistory testComment

@@ -5,6 +5,8 @@
 
 int main(int argc, char const *argv[]){
 	struct version v = {.major = 3, .minor = 5, .flags = 0};
+	printf("version : %lu\n", sizeof(struct version));
+	printf("v : %lu\n", sizeof(v));
 
 	int (*fun_ptr)(struct version*) = &is_unstable_bis;
 

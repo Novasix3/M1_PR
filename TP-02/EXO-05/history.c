@@ -1,7 +1,8 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-#include"history.h"
+#include "history.h"
+#include "list.h"
 
 /**
   * new_history - alloue, initialise et retourne un historique.
@@ -25,11 +26,7 @@ struct history *new_history(char *name)
 struct commit *last_commit(struct history *h)
 {
   struct commit* c = h->commit_list;
-  if(c == NULL)
-    return NULL;
-	while(c->next != NULL && c->next->id != 0)
-    c = c->next;
-	return c;
+  return container_of(c->lh.prev, struct commit, lh);
 }
 
 /**
@@ -41,16 +38,14 @@ struct commit *last_commit(struct history *h)
 void display_history(struct history *h)
 {
   printf("Historique de '%s' : \n", h->name);
-  struct commit* cur = h->commit_list;
-  if(cur->id == 0 && cur->next->id == 0)
+  if(h->commit_list->lh.prev == h->commit_list->lh.next)
     printf("Historique vide !\n\n");
-  else{
-    if(cur->id == 0)
-      cur = cur->next;
-    while(cur->id != 0){
-      display_commit(cur);
-      cur = cur->next;
-    }
+  //h->commit_list->display(h->commit_list);
+  struct list_head* pos;
+  struct commit* c;
+  list_for_each(pos, &(h->commit_list->lh)){
+    c = container_of(pos, struct commit, lh);
+    display_commit(c);
   }
   printf("\n");
 }
@@ -64,13 +59,38 @@ void display_history(struct history *h)
   */
 void infos(struct history *h, int major, unsigned long minor)
 {
-  struct commit* c = h->commit_list->next;
-  while(c->id != 0){
-    if((c->version.major == major && c->version.minor == minor)){
+  struct list_head* pos;
+  struct commit* c = NULL;
+  list_for_each(pos, &(h->commit_list->major_list)){
+    c = container_of(pos, struct commit, major_list);
+    if(c->version.major == major)
+      break;
+  }
+  if(c == NULL){
+    printf("Not here !!!\n");
+    return;
+  }
+  list_for_each(pos, &(c->lh)){
+    c = container_of(pos, struct commit, lh);
+    if(c->version.major != major)
+      break;
+    if(c->version.minor == minor){
       display_commit(c);
       return;
     }
-    c = c->next;
   }
   printf("Not here !!!\n");
+}
+
+void freeHistory(struct history* h){
+  struct list_head* pos, *n;
+  struct commit* c = NULL;
+  list_for_each_safe(pos, n, &(h->commit_list->lh)){
+    c = container_of(pos, struct commit, lh);
+    //printf("free de c = \n");
+    //display_commit(c);
+    freeCommit(c);
+  }
+  free(h->commit_list);
+  free(h);
 }
