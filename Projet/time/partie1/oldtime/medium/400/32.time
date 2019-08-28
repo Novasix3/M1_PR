@@ -1,0 +1,98 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 400
+#0 start
+#3 start
+#8 start
+#20 start
+#1 start
+#21 start
+#25 start
+#23 start
+#10 start
+#5 start
+#18 start
+#17 start
+#4 start
+#6 start
+#7 start
+#2 start
+#27 start
+#22 start
+#12 start
+#14 start
+#9 start
+#13 start
+#16 start
+#24 start
+#19 start
+#26 start
+#31 start
+#29 start
+#15 start
+#30 start
+#11 start
+#28 start
+255.164000 #21 arrete de recevoir des taches
+255.165313 #6 arrete de recevoir des taches
+255.340659 #20 arrete de recevoir des taches
+255.342113 #8 arrete de recevoir des taches
+255.342948 #19 arrete de recevoir des taches
+255.343193 #10 arrete de recevoir des taches
+255.342958 #18 arrete de recevoir des taches
+255.343070 #15 arrete de recevoir des taches
+255.343206 #11 arrete de recevoir des taches
+255.368117 #1 arrete de recevoir des taches
+256.106786 #13 arrete de recevoir des taches
+256.108805 #0 arrete de recevoir des taches
+256.108408 #16 arrete de recevoir des taches
+257.707043 #17 arrete de recevoir des taches
+257.706476 #29 arrete de recevoir des taches
+257.706975 #5 arrete de recevoir des taches
+257.706795 #25 arrete de recevoir des taches
+257.708077 #4 arrete de recevoir des taches
+257.707532 #12 arrete de recevoir des taches
+257.707544 #14 arrete de recevoir des taches
+257.707555 #9 arrete de recevoir des taches
+257.707437 #28 arrete de recevoir des taches
+257.708235 #24 arrete de recevoir des taches
+257.708452 #7 arrete de recevoir des taches
+257.708252 #26 arrete de recevoir des taches
+257.707145 #3 arrete de recevoir des taches
+257.708681 #2 arrete de recevoir des taches
+257.708994 #27 arrete de recevoir des taches
+257.708821 #22 arrete de recevoir des taches
+257.708253 #30 arrete de recevoir des taches
+257.709074 #23 arrete de recevoir des taches
+257.708989 #31 arrete de recevoir des taches
+258.428247 #10 fini
+258.427831 #14 fini
+258.427722 #16 fini
+258.427697 #29 fini
+258.427667 #13 fini
+258.428778 #0 fini
+258.428662 #17 fini
+258.427835 #26 fini
+258.428027 #31 fini
+258.427818 #15 fini
+258.427730 #30 fini
+258.428183 #18 fini
+258.426957 #20 fini
+258.428575 #23 fini
+258.428575 #19 fini
+258.427055 #3 fini
+258.428880 #21 fini
+258.428637 #2 fini
+258.428496 #22 fini
+258.428824 #4 fini
+258.428634 #6 fini
+258.428943 #7 fini
+258.427984 #8 fini
+258.428661 #5 fini
+258.428764 #1 fini
+258.429063 #27 fini
+258.428535 #11 fini
+258.429086 #24 fini
+258.428521 #12 fini
+258.428517 #28 fini
+258.428194 #25 fini
+258.428826 #9 fini
+cat log/proc*.log | sort -n > log/proc.log

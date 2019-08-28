@@ -1,0 +1,98 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 400
+#0 start
+#17 start
+#4 start
+#16 start
+#14 start
+#21 start
+#29 start
+#3 start
+#30 start
+#15 start
+#31 start
+#12 start
+#20 start
+#1 start
+#2 start
+#10 start
+#6 start
+#11 start
+#26 start
+#13 start
+#18 start
+#19 start
+#27 start
+#23 start
+#5 start
+#24 start
+#28 start
+#8 start
+#9 start
+#22 start
+#7 start
+#25 start
+11.290280 #15 arrete de recevoir des taches
+11.381351 #1 arrete de recevoir des taches
+11.402935 #5 arrete de recevoir des taches
+11.410478 #3 arrete de recevoir des taches
+11.415507 #9 arrete de recevoir des taches
+11.422177 #7 arrete de recevoir des taches
+11.476640 #11 arrete de recevoir des taches
+11.497912 #13 arrete de recevoir des taches
+11.838986 #14 arrete de recevoir des taches
+11.857470 #12 arrete de recevoir des taches
+11.877389 #10 arrete de recevoir des taches
+11.916826 #8 arrete de recevoir des taches
+12.039846 #6 arrete de recevoir des taches
+12.131962 #4 arrete de recevoir des taches
+12.218526 #2 arrete de recevoir des taches
+12.288679 #0 arrete de recevoir des taches
+12.288760 #18 arrete de recevoir des taches
+12.288644 #22 arrete de recevoir des taches
+12.288740 #24 arrete de recevoir des taches
+12.288844 #28 arrete de recevoir des taches
+12.288824 #26 arrete de recevoir des taches
+12.289090 #29 arrete de recevoir des taches
+12.289026 #21 arrete de recevoir des taches
+12.288856 #23 arrete de recevoir des taches
+12.288561 #25 arrete de recevoir des taches
+12.289034 #31 arrete de recevoir des taches
+12.288946 #27 arrete de recevoir des taches
+12.288925 #30 arrete de recevoir des taches
+12.289730 #17 arrete de recevoir des taches
+12.289696 #16 arrete de recevoir des taches
+12.302583 #20 arrete de recevoir des taches
+12.306109 #19 arrete de recevoir des taches
+12.340384 #7 fini, computed time 11.421645
+12.340690 #15 fini, computed time 11.289822
+12.340805 #14 fini, computed time 11.838537
+12.340720 #19 fini, computed time 10.682127
+12.340671 #23 fini, computed time 10.639790
+12.340747 #30 fini, computed time 10.856445
+12.340840 #31 fini, computed time 10.587630
+12.341273 #0 fini, computed time 12.286942
+12.340882 #18 fini, computed time 11.164555
+12.340947 #2 fini, computed time 12.218095
+12.341096 #3 fini, computed time 11.410060
+12.340934 #6 fini, computed time 12.039358
+12.341449 #17 fini, computed time 10.804657
+12.340815 #22 fini, computed time 11.068771
+12.340949 #11 fini, computed time 11.476228
+12.341187 #16 fini, computed time 10.928689
+12.341202 #1 fini, computed time 11.380932
+12.341125 #27 fini, computed time 10.585971
+12.341360 #21 fini, computed time 10.677856
+12.340926 #25 fini, computed time 10.644485
+12.341114 #9 fini, computed time 11.415081
+12.341234 #5 fini, computed time 11.402333
+12.341455 #26 fini, computed time 10.973340
+12.341577 #20 fini, computed time 11.114517
+12.341583 #10 fini, computed time 11.876982
+12.341952 #4 fini, computed time 12.131537
+12.341664 #24 fini, computed time 11.027533
+12.341544 #8 fini, computed time 11.916256
+12.341732 #13 fini, computed time 11.497537
+12.342042 #29 fini, computed time 10.630310
+12.342228 #12 fini, computed time 11.857061
+12.342145 #28 fini, computed time 10.901899
+cat log/proc*.log | sort -n > log/proc.log

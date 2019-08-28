@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 200
+#0 start
+#17 start
+#34 start
+#51 start
+#31 start
+#14 start
+#48 start
+#13 start
+#30 start
+#43 start
+#46 start
+#47 start
+#60 start
+#21 start
+#63 start
+#9 start
+#5 start
+#36 start
+#38 start
+#12 start
+#26 start
+#3 start
+#22 start
+#10 start
+#2 start
+#32 start
+#18 start
+#40 start
+#4 start
+#29 start
+#37 start
+#56 start
+#44 start
+#19 start
+#11 start
+#49 start
+#52 start
+#57 start
+#16 start
+#7 start
+#8 start
+#55 start
+#20 start
+#39 start
+#27 start
+#53 start
+#28 start
+#15 start
+#1 start
+#6 start
+#33 start
+#41 start
+#25 start
+#54 start
+#61 start
+#45 start
+#35 start
+#23 start
+#50 start
+#58 start
+#42 start
+#62 start
+#24 start
+#59 start
+3.145875 #8 arrete de recevoir des taches
+3.426050 #7 arrete de recevoir des taches
+3.454460 #4 arrete de recevoir des taches
+3.459674 #3 arrete de recevoir des taches
+3.474606 #2 arrete de recevoir des taches
+3.483406 #6 arrete de recevoir des taches
+3.484556 #5 arrete de recevoir des taches
+3.547977 #0 arrete de recevoir des taches
+3.550496 #1 arrete de recevoir des taches
+3.597673 #51 arrete de recevoir des taches
+3.613676 #9 arrete de recevoir des taches
+3.617227 #18 arrete de recevoir des taches
+3.648855 #19 arrete de recevoir des taches
+3.738290 #20 arrete de recevoir des taches
+3.819636 #21 arrete de recevoir des taches
+3.893742 #23 arrete de recevoir des taches
+3.953589 #58 arrete de recevoir des taches
+3.953547 #24 arrete de recevoir des taches
+3.953721 #41 arrete de recevoir des taches
+4.019213 #59 arrete de recevoir des taches
+4.019686 #25 arrete de recevoir des taches
+4.020551 #42 arrete de recevoir des taches
+4.020885 #10 arrete de recevoir des taches
+4.021046 #60 arrete de recevoir des taches
+4.020880 #61 arrete de recevoir des taches
+4.020731 #62 arrete de recevoir des taches
+4.081266 #63 arrete de recevoir des taches
+4.081244 #14 arrete de recevoir des taches
+4.080960 #11 arrete de recevoir des taches
+4.081770 #17 arrete de recevoir des taches
+4.081177 #12 arrete de recevoir des taches
+4.081886 #34 arrete de recevoir des taches
+4.081375 #13 arrete de recevoir des taches
+4.081261 #26 arrete de recevoir des taches
+4.081221 #27 arrete de recevoir des taches
+4.080909 #15 arrete de recevoir des taches
+4.080912 #16 arrete de recevoir des taches
+4.081289 #22 arrete de recevoir des taches
+4.081161 #28 arrete de recevoir des taches
+4.081379 #29 arrete de recevoir des taches
+4.081202 #32 arrete de recevoir des taches
+4.081541 #38 arrete de recevoir des taches
+4.081607 #30 arrete de recevoir des taches
+4.081556 #43 arrete de recevoir des taches
+4.081278 #39 arrete de recevoir des taches
+4.081627 #31 arrete de recevoir des taches
+4.081436 #36 arrete de recevoir des taches
+4.081243 #35 arrete de recevoir des taches
+4.081027 #33 arrete de recevoir des taches
+4.081521 #44 arrete de recevoir des taches
+4.081392 #52 arrete de recevoir des taches
+4.081378 #40 arrete de recevoir des taches
+4.081596 #47 arrete de recevoir des taches
+4.081476 #57 arrete de recevoir des taches
+4.081673 #55 arrete de recevoir des taches
+4.081490 #49 arrete de recevoir des taches
+4.081772 #48 arrete de recevoir des taches
+4.081607 #37 arrete de recevoir des taches
+4.081583 #53 arrete de recevoir des taches
+4.081701 #56 arrete de recevoir des taches
+4.081338 #50 arrete de recevoir des taches
+4.081581 #54 arrete de recevoir des taches
+4.081598 #45 arrete de recevoir des taches
+4.081740 #46 arrete de recevoir des taches
+4.128329 #34 fini, computed time 2.968817
+4.128371 #0 fini, computed time 3.547380
+4.127680 #2 fini, computed time 3.474132
+4.127607 #6 fini, computed time 3.482999
+4.127943 #38 fini, computed time 2.849819
+4.127777 #3 fini, computed time 3.459199
+4.127730 #32 fini, computed time 2.930602
+4.127712 #35 fini, computed time 2.946064
+4.127816 #7 fini, computed time 3.425615
+4.128221 #30 fini, computed time 2.978995
+4.127836 #62 fini, computed time 2.480484
+4.127866 #39 fini, computed time 2.861659
+4.128372 #31 fini, computed time 2.932046
+4.127984 #18 fini, computed time 2.963162
+4.128834 #51 fini, computed time 2.705047
+4.128344 #63 fini, computed time 2.467860
+4.128111 #54 fini, computed time 2.660911
+4.128233 #22 fini, computed time 3.088998
+4.128126 #19 fini, computed time 2.958213
+4.127787 #50 fini, computed time 2.617196
+4.128484 #46 fini, computed time 2.741233
+4.128443 #14 fini, computed time 2.748310
+4.127946 #16 fini, computed time 2.803133
+4.128390 #4 fini, computed time 3.453917
+4.128466 #48 fini, computed time 2.641608
+4.128218 #11 fini, computed time 2.717981
+4.128048 #15 fini, computed time 2.781701
+4.128111 #23 fini, computed time 3.101999
+4.128400 #55 fini, computed time 2.669823
+4.128532 #43 fini, computed time 2.817908
+4.128440 #36 fini, computed time 2.861048
+4.128199 #8 fini, computed time 3.145475
+4.128451 #47 fini, computed time 2.660626
+4.128321 #40 fini, computed time 2.868157
+4.128483 #10 fini, computed time 2.700233
+4.128582 #26 fini, computed time 3.103174
+4.128515 #27 fini, computed time 3.093292
+4.128324 #42 fini, computed time 2.810843
+4.128427 #58 fini, computed time 2.595319
+4.128348 #59 fini, computed time 2.545855
+4.128779 #12 fini, computed time 2.773069
+4.128605 #20 fini, computed time 3.007915
+4.128769 #44 fini, computed time 2.780871
+4.128668 #52 fini, computed time 2.692740
+4.128537 #24 fini, computed time 3.089897
+4.128785 #56 fini, computed time 2.654678
+4.128913 #28 fini, computed time 3.068943
+4.129235 #60 fini, computed time 2.535102
+4.136986 #33 fini, computed time 2.909275
+4.137381 #1 fini, computed time 3.550014
+4.138138 #17 fini, computed time 2.938894
+4.137651 #5 fini, computed time 3.484070
+4.137591 #37 fini, computed time 2.858950
+4.137573 #49 fini, computed time 2.629331
+4.137879 #9 fini, computed time 2.750666
+4.137780 #41 fini, computed time 2.830804
+4.138134 #21 fini, computed time 3.062833
+4.137953 #53 fini, computed time 2.651156
+4.137949 #45 fini, computed time 2.758292
+4.138233 #13 fini, computed time 2.737937
+4.138019 #25 fini, computed time 3.068107
+4.138129 #57 fini, computed time 2.640447
+4.138347 #29 fini, computed time 3.051554
+4.138314 #61 fini, computed time 2.512368
+cat log/proc*.log | sort -n > log/proc.log

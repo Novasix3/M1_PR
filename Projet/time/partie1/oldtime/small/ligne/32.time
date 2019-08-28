@@ -1,0 +1,98 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 600
+#0 start
+#17 start
+#18 start
+#2 start
+#7 start
+#8 start
+#1 start
+#19 start
+#21 start
+#24 start
+#6 start
+#25 start
+#14 start
+#12 start
+#15 start
+#4 start
+#23 start
+#5 start
+#31 start
+#29 start
+#3 start
+#26 start
+#11 start
+#22 start
+#10 start
+#20 start
+#13 start
+#27 start
+#9 start
+#28 start
+#30 start
+#16 start
+18.412393 #7 arrete de recevoir des taches
+18.517607 #5 arrete de recevoir des taches
+18.520279 #6 arrete de recevoir des taches
+18.750133 #3 arrete de recevoir des taches
+18.752276 #4 arrete de recevoir des taches
+19.061180 #2 arrete de recevoir des taches
+19.230143 #0 arrete de recevoir des taches
+19.314003 #1 arrete de recevoir des taches
+19.331820 #24 arrete de recevoir des taches
+19.333680 #15 arrete de recevoir des taches
+19.333760 #8 arrete de recevoir des taches
+19.333657 #22 arrete de recevoir des taches
+19.333745 #25 arrete de recevoir des taches
+19.334369 #17 arrete de recevoir des taches
+19.333905 #29 arrete de recevoir des taches
+19.333846 #27 arrete de recevoir des taches
+19.333924 #10 arrete de recevoir des taches
+19.334252 #18 arrete de recevoir des taches
+19.333945 #31 arrete de recevoir des taches
+19.334055 #12 arrete de recevoir des taches
+19.333829 #20 arrete de recevoir des taches
+19.333851 #26 arrete de recevoir des taches
+19.333948 #11 arrete de recevoir des taches
+19.333871 #13 arrete de recevoir des taches
+19.333997 #14 arrete de recevoir des taches
+19.333905 #9 arrete de recevoir des taches
+19.333845 #28 arrete de recevoir des taches
+19.333870 #30 arrete de recevoir des taches
+19.334083 #19 arrete de recevoir des taches
+19.333956 #23 arrete de recevoir des taches
+19.333907 #16 arrete de recevoir des taches
+19.334183 #21 arrete de recevoir des taches
+19.372473 #2 fini
+19.372812 #17 fini
+19.372670 #18 fini
+19.372527 #19 fini
+19.372466 #6 fini
+19.372195 #3 fini
+19.372631 #7 fini
+19.372547 #23 fini
+19.372473 #14 fini
+19.372526 #15 fini
+19.372439 #30 fini
+19.372437 #22 fini
+19.372567 #31 fini
+19.372886 #1 fini
+19.373186 #0 fini
+19.372743 #5 fini
+19.372752 #10 fini
+19.372948 #21 fini
+19.372774 #26 fini
+19.372922 #11 fini
+19.372922 #27 fini
+19.372844 #9 fini
+19.373056 #25 fini
+19.373211 #4 fini
+19.373002 #20 fini
+19.373273 #29 fini
+19.373142 #13 fini
+19.373402 #16 fini
+19.373686 #12 fini
+19.373597 #28 fini
+19.374007 #8 fini
+19.374044 #24 fini
+cat log/proc*.log | sort -n > log/proc.log

@@ -1,0 +1,50 @@
+mpirun -n 16 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 400
+#0 start
+#12 start
+#3 start
+#14 start
+#6 start
+#13 start
+#8 start
+#10 start
+#4 start
+#9 start
+#15 start
+#11 start
+#1 start
+#5 start
+#2 start
+#7 start
+23.028827 #0 arrete de recevoir des taches
+23.028653 #13 arrete de recevoir des taches
+23.028493 #1 arrete de recevoir des taches
+23.028727 #14 arrete de recevoir des taches
+23.028357 #2 arrete de recevoir des taches
+23.028614 #15 arrete de recevoir des taches
+23.029231 #3 arrete de recevoir des taches
+23.029164 #4 arrete de recevoir des taches
+23.029234 #11 arrete de recevoir des taches
+23.029178 #9 arrete de recevoir des taches
+23.028984 #5 arrete de recevoir des taches
+23.029205 #6 arrete de recevoir des taches
+23.029057 #7 arrete de recevoir des taches
+23.029368 #10 arrete de recevoir des taches
+23.029242 #8 arrete de recevoir des taches
+23.029339 #12 arrete de recevoir des taches
+23.064198 #0 fini, computed time 23.026677
+23.063952 #8 fini, computed time 22.497417
+23.063923 #6 fini, computed time 22.652594
+23.064110 #14 fini, computed time 22.294986
+23.064142 #7 fini, computed time 21.702969
+23.064568 #10 fini, computed time 22.354838
+23.064152 #2 fini, computed time 22.927493
+23.064410 #15 fini, computed time 21.670744
+23.064575 #1 fini, computed time 21.774096
+23.064686 #9 fini, computed time 21.613686
+23.064671 #4 fini, computed time 22.842540
+23.064848 #12 fini, computed time 22.322020
+23.064983 #3 fini, computed time 21.674506
+23.065038 #11 fini, computed time 21.688873
+23.065185 #13 fini, computed time 21.719833
+23.064915 #5 fini, computed time 21.645395
+cat log/proc*.log | sort -n > log/proc.log

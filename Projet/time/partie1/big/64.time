@@ -1,0 +1,193 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 3840 2160 5000
+#0 start
+#48 start
+#32 start
+#16 start
+#14 start
+#2 start
+#29 start
+#30 start
+#34 start
+#62 start
+#18 start
+#10 start
+#1 start
+#11 start
+#61 start
+#8 start
+#46 start
+#50 start
+#26 start
+#49 start
+#27 start
+#45 start
+#23 start
+#40 start
+#60 start
+#21 start
+#42 start
+#17 start
+#43 start
+#13 start
+#7 start
+#24 start
+#15 start
+#52 start
+#6 start
+#12 start
+#53 start
+#41 start
+#51 start
+#58 start
+#33 start
+#59 start
+#39 start
+#56 start
+#31 start
+#4 start
+#22 start
+#28 start
+#5 start
+#57 start
+#19 start
+#55 start
+#47 start
+#20 start
+#38 start
+#44 start
+#37 start
+#9 start
+#3 start
+#63 start
+#36 start
+#54 start
+#25 start
+#35 start
+8932.530264 #61 arrete de recevoir des taches
+8932.525990 #51 arrete de recevoir des taches
+8932.523259 #54 arrete de recevoir des taches
+8932.555744 #50 arrete de recevoir des taches
+8932.530789 #45 arrete de recevoir des taches
+8932.487121 #55 arrete de recevoir des taches
+8932.523769 #57 arrete de recevoir des taches
+8932.528762 #59 arrete de recevoir des taches
+8932.533244 #47 arrete de recevoir des taches
+8932.526551 #60 arrete de recevoir des taches
+8932.527170 #56 arrete de recevoir des taches
+8932.521497 #46 arrete de recevoir des taches
+8932.526912 #44 arrete de recevoir des taches
+8932.529482 #43 arrete de recevoir des taches
+8932.522224 #42 arrete de recevoir des taches
+8932.524755 #41 arrete de recevoir des taches
+8932.487172 #48 arrete de recevoir des taches
+8932.528066 #40 arrete de recevoir des taches
+8932.488234 #39 arrete de recevoir des taches
+8932.524962 #38 arrete de recevoir des taches
+8932.591464 #37 arrete de recevoir des taches
+8932.569248 #36 arrete de recevoir des taches
+8932.528417 #28 arrete de recevoir des taches
+8932.533919 #29 arrete de recevoir des taches
+8932.536351 #31 arrete de recevoir des taches
+8932.490674 #32 arrete de recevoir des taches
+8932.524532 #30 arrete de recevoir des taches
+8932.529548 #35 arrete de recevoir des taches
+8932.529325 #33 arrete de recevoir des taches
+8932.559623 #34 arrete de recevoir des taches
+8932.505565 #0 arrete de recevoir des taches
+8932.539735 #62 arrete de recevoir des taches
+8932.544318 #1 arrete de recevoir des taches
+8932.539913 #14 arrete de recevoir des taches
+8932.544350 #17 arrete de recevoir des taches
+8932.551751 #15 arrete de recevoir des taches
+8932.506009 #16 arrete de recevoir des taches
+8932.574680 #18 arrete de recevoir des taches
+8932.540119 #10 arrete de recevoir des taches
+8932.551736 #63 arrete de recevoir des taches
+8932.545002 #19 arrete de recevoir des taches
+8932.545798 #8 arrete de recevoir des taches
+8932.574870 #2 arrete de recevoir des taches
+8932.548984 #13 arrete de recevoir des taches
+8932.585856 #4 arrete de recevoir des taches
+8932.547813 #11 arrete de recevoir des taches
+8932.506113 #7 arrete de recevoir des taches
+8932.608496 #5 arrete de recevoir des taches
+8932.542594 #9 arrete de recevoir des taches
+8932.545075 #3 arrete de recevoir des taches
+8932.608545 #21 arrete de recevoir des taches
+8932.544988 #49 arrete de recevoir des taches
+8932.608901 #53 arrete de recevoir des taches
+8932.546361 #24 arrete de recevoir des taches
+8932.586174 #20 arrete de recevoir des taches
+8932.542692 #6 arrete de recevoir des taches
+8932.540773 #58 arrete de recevoir des taches
+8932.506692 #23 arrete de recevoir des taches
+8932.586589 #52 arrete de recevoir des taches
+8932.542843 #22 arrete de recevoir des taches
+8932.541973 #26 arrete de recevoir des taches
+8932.543550 #25 arrete de recevoir des taches
+8932.546701 #12 arrete de recevoir des taches
+8932.550161 #27 arrete de recevoir des taches
+8936.820524 #48 fini, computed time 8866.521456
+8936.820624 #32 fini, computed time 8852.525854
+8936.860442 #40 fini, computed time 8855.348204
+8936.900393 #36 fini, computed time 8865.700318
+8936.820712 #16 fini, computed time 8928.192451
+8936.889511 #50 fini, computed time 8863.262660
+8936.860476 #56 fini, computed time 8864.651851
+8936.900496 #52 fini, computed time 8866.722862
+8936.860057 #60 fini, computed time 8859.052253
+8936.889553 #34 fini, computed time 8845.908670
+8936.855010 #58 fini, computed time 8860.838162
+8936.859428 #49 fini, computed time 8862.413160
+8936.860665 #24 fini, computed time 8906.531703
+8936.855003 #42 fini, computed time 8858.959183
+8936.900617 #20 fini, computed time 8931.489788
+8936.857236 #38 fini, computed time 8865.992429
+8936.859958 #44 fini, computed time 8848.983242
+8936.923248 #37 fini, computed time 8860.922089
+8936.857506 #41 fini, computed time 8851.032408
+8936.854969 #62 fini, computed time 8861.225124
+8936.889701 #18 fini, computed time 8928.049786
+8936.859415 #33 fini, computed time 8837.899247
+8936.860147 #28 fini, computed time 8866.490776
+8936.855176 #26 fini, computed time 8903.678409
+8936.857171 #54 fini, computed time 8880.977985
+8936.923309 #53 fini, computed time 8860.965352
+8936.857496 #57 fini, computed time 8868.588442
+8936.854917 #46 fini, computed time 8850.814433
+8936.859554 #17 fini, computed time 8926.020947
+8936.857428 #22 fini, computed time 8918.037525
+8936.857597 #25 fini, computed time 8909.621433
+8936.855159 #30 fini, computed time 8849.987942
+8936.923598 #21 fini, computed time 8928.593706
+8936.860167 #51 fini, computed time 8861.284449
+8936.864778 #61 fini, computed time 8864.537980
+8936.860968 #8 fini, computed time 8900.083280
+8936.862761 #43 fini, computed time 8847.065709
+8936.864739 #45 fini, computed time 8858.412533
+8936.821105 #39 fini, computed time 8861.903664
+8936.862771 #59 fini, computed time 8861.233515
+8936.821114 #55 fini, computed time 8874.995690
+8936.860416 #12 fini, computed time 8916.257030
+8936.860207 #35 fini, computed time 8874.294167
+8936.855494 #10 fini, computed time 8911.171255
+8936.862928 #27 fini, computed time 8883.945891
+8936.867199 #47 fini, computed time 8862.448011
+8936.864934 #29 fini, computed time 8870.282358
+8936.821310 #23 fini, computed time 8913.634330
+8936.857902 #9 fini, computed time 8906.262994
+8936.860315 #19 fini, computed time 8929.828884
+8936.855454 #14 fini, computed time 8921.635948
+8936.867195 #63 fini, computed time 8875.338645
+8936.867370 #31 fini, computed time 8853.445055
+8936.867502 #15 fini, computed time 8921.470753
+8936.863242 #11 fini, computed time 8912.835975
+8936.865130 #13 fini, computed time 8920.745539
+8936.821669 #7 fini, computed time 8898.546584
+8936.901490 #4 fini, computed time 8900.922474
+8936.858266 #6 fini, computed time 8893.496941
+8936.924442 #5 fini, computed time 8895.340300
+8936.861335 #3 fini, computed time 8901.525703
+8936.891763 #2 fini, computed time 8893.110343
+8936.823144 #0 fini, computed time 8870.999986
+8936.861743 #1 fini, computed time 8885.379942

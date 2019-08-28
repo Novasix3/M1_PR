@@ -1,0 +1,98 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 600
+#17 start
+#5 start
+#0 start
+#13 start
+#22 start
+#3 start
+#2 start
+#30 start
+#18 start
+#7 start
+#14 start
+#11 start
+#16 start
+#9 start
+#20 start
+#19 start
+#1 start
+#24 start
+#31 start
+#28 start
+#26 start
+#6 start
+#4 start
+#8 start
+#23 start
+#21 start
+#25 start
+#12 start
+#15 start
+#10 start
+#27 start
+#29 start
+16.523053 #15 arrete de recevoir des taches
+16.546319 #27 arrete de recevoir des taches
+16.631191 #24 arrete de recevoir des taches
+16.699279 #21 arrete de recevoir des taches
+16.758186 #26 arrete de recevoir des taches
+16.773712 #23 arrete de recevoir des taches
+16.783387 #18 arrete de recevoir des taches
+16.857364 #16 arrete de recevoir des taches
+16.888087 #20 arrete de recevoir des taches
+16.910356 #12 arrete de recevoir des taches
+16.950616 #1 arrete de recevoir des taches
+16.968360 #14 arrete de recevoir des taches
+16.973381 #4 arrete de recevoir des taches
+16.974507 #9 arrete de recevoir des taches
+17.028702 #7 arrete de recevoir des taches
+17.089162 #17 arrete de recevoir des taches
+17.102033 #6 arrete de recevoir des taches
+17.108778 #11 arrete de recevoir des taches
+17.149813 #13 arrete de recevoir des taches
+17.164078 #10 arrete de recevoir des taches
+17.183615 #25 arrete de recevoir des taches
+17.199135 #8 arrete de recevoir des taches
+17.264957 #5 arrete de recevoir des taches
+17.279172 #2 arrete de recevoir des taches
+17.323791 #3 arrete de recevoir des taches
+17.428608 #22 arrete de recevoir des taches
+17.460674 #19 arrete de recevoir des taches
+17.467698 #30 arrete de recevoir des taches
+17.467927 #31 arrete de recevoir des taches
+17.584951 #0 arrete de recevoir des taches
+17.585259 #28 arrete de recevoir des taches
+17.598709 #29 arrete de recevoir des taches
+17.632208 #15 fini
+17.632393 #14 fini
+17.632630 #30 fini
+17.633008 #0 fini
+17.632419 #31 fini
+17.632693 #2 fini
+17.633199 #17 fini
+17.632870 #3 fini
+17.632783 #18 fini
+17.632748 #19 fini
+17.632792 #1 fini
+17.632814 #6 fini
+17.633050 #22 fini
+17.632885 #7 fini
+17.632933 #11 fini
+17.633006 #23 fini
+17.632865 #27 fini
+17.633334 #5 fini
+17.633034 #21 fini
+17.633192 #26 fini
+17.633020 #10 fini
+17.633301 #13 fini
+17.633159 #9 fini
+17.633238 #16 fini
+17.633200 #25 fini
+17.633175 #29 fini
+17.633459 #20 fini
+17.633265 #4 fini
+17.633341 #8 fini
+17.633356 #24 fini
+17.633665 #12 fini
+17.633742 #28 fini
+cat log/proc*.log | sort -n > log/proc.log

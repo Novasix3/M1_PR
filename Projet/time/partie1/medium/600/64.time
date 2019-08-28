@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 600
+#0 start
+#17 start
+#56 start
+#11 start
+#39 start
+#28 start
+#3 start
+#15 start
+#45 start
+#62 start
+#5 start
+#37 start
+#32 start
+#48 start
+#22 start
+#54 start
+#49 start
+#12 start
+#20 start
+#13 start
+#33 start
+#2 start
+#55 start
+#24 start
+#25 start
+#47 start
+#14 start
+#10 start
+#36 start
+#4 start
+#23 start
+#42 start
+#26 start
+#35 start
+#46 start
+#30 start
+#31 start
+#50 start
+#53 start
+#21 start
+#7 start
+#59 start
+#60 start
+#1 start
+#63 start
+#27 start
+#16 start
+#19 start
+#38 start
+#40 start
+#41 start
+#8 start
+#43 start
+#18 start
+#29 start
+#44 start
+#57 start
+#58 start
+#9 start
+#52 start
+#61 start
+#6 start
+#34 start
+#51 start
+220.573060 #12 arrete de recevoir des taches
+220.573557 #57 arrete de recevoir des taches
+220.574091 #17 arrete de recevoir des taches
+220.573516 #19 arrete de recevoir des taches
+220.573736 #22 arrete de recevoir des taches
+220.573441 #24 arrete de recevoir des taches
+220.573763 #26 arrete de recevoir des taches
+220.573228 #13 arrete de recevoir des taches
+220.573905 #27 arrete de recevoir des taches
+220.573686 #52 arrete de recevoir des taches
+220.573990 #61 arrete de recevoir des taches
+220.573908 #23 arrete de recevoir des taches
+220.574015 #25 arrete de recevoir des taches
+220.574125 #15 arrete de recevoir des taches
+220.574091 #14 arrete de recevoir des taches
+220.574176 #48 arrete de recevoir des taches
+220.574122 #18 arrete de recevoir des taches
+220.574672 #20 arrete de recevoir des taches
+220.574928 #16 arrete de recevoir des taches
+220.574427 #21 arrete de recevoir des taches
+220.574729 #62 arrete de recevoir des taches
+220.574576 #7 arrete de recevoir des taches
+220.575054 #28 arrete de recevoir des taches
+220.701830 #4 arrete de recevoir des taches
+220.701905 #6 arrete de recevoir des taches
+220.703058 #44 arrete de recevoir des taches
+220.703700 #3 arrete de recevoir des taches
+221.054834 #11 arrete de recevoir des taches
+221.054782 #9 arrete de recevoir des taches
+221.055116 #5 arrete de recevoir des taches
+221.055357 #36 arrete de recevoir des taches
+221.055650 #49 arrete de recevoir des taches
+221.055462 #63 arrete de recevoir des taches
+221.055056 #47 arrete de recevoir des taches
+221.056557 #1 arrete de recevoir des taches
+221.058222 #8 arrete de recevoir des taches
+221.109807 #2 arrete de recevoir des taches
+221.161436 #34 arrete de recevoir des taches
+221.160889 #38 arrete de recevoir des taches
+221.161240 #39 arrete de recevoir des taches
+221.160851 #29 arrete de recevoir des taches
+221.161704 #37 arrete de recevoir des taches
+221.161301 #42 arrete de recevoir des taches
+221.161124 #43 arrete de recevoir des taches
+221.161220 #40 arrete de recevoir des taches
+221.160684 #30 arrete de recevoir des taches
+221.161386 #31 arrete de recevoir des taches
+221.161501 #32 arrete de recevoir des taches
+221.162346 #33 arrete de recevoir des taches
+221.162417 #45 arrete de recevoir des taches
+221.161881 #41 arrete de recevoir des taches
+221.508925 #10 arrete de recevoir des taches
+221.508655 #46 arrete de recevoir des taches
+221.508770 #58 arrete de recevoir des taches
+221.510005 #51 arrete de recevoir des taches
+221.509535 #53 arrete de recevoir des taches
+221.509839 #59 arrete de recevoir des taches
+221.510324 #0 arrete de recevoir des taches
+221.510727 #50 arrete de recevoir des taches
+221.510769 #56 arrete de recevoir des taches
+221.510808 #54 arrete de recevoir des taches
+221.510833 #60 arrete de recevoir des taches
+221.510661 #35 arrete de recevoir des taches
+221.510654 #55 arrete de recevoir des taches
+222.273986 #33 fini, computed time 209.666347
+222.273698 #34 fini, computed time 213.380212
+222.273441 #11 fini, computed time 221.046496
+222.273218 #43 fini, computed time 213.601071
+222.273970 #17 fini, computed time 211.715541
+222.273373 #36 fini, computed time 210.529199
+222.273396 #1 fini, computed time 217.351323
+222.273564 #31 fini, computed time 208.211444
+222.273397 #4 fini, computed time 218.926931
+222.274055 #0 fini, computed time 216.250404
+222.272927 #30 fini, computed time 207.916646
+222.273652 #49 fini, computed time 209.550511
+222.273622 #14 fini, computed time 209.520569
+222.273539 #2 fini, computed time 220.302494
+222.273824 #62 fini, computed time 217.195369
+222.273456 #63 fini, computed time 217.323478
+222.273358 #41 fini, computed time 213.060806
+222.274615 #50 fini, computed time 209.958317
+222.273941 #39 fini, computed time 213.491690
+222.273464 #46 fini, computed time 218.903360
+222.273761 #9 fini, computed time 220.085422
+222.273777 #18 fini, computed time 211.484056
+222.274315 #20 fini, computed time 211.870276
+222.274011 #15 fini, computed time 210.325708
+222.273873 #40 fini, computed time 213.126947
+222.273925 #8 fini, computed time 219.062693
+222.273869 #35 fini, computed time 210.606900
+222.273718 #52 fini, computed time 211.357154
+222.274461 #37 fini, computed time 213.391466
+222.273659 #7 fini, computed time 220.565009
+222.274038 #32 fini, computed time 209.853942
+222.274112 #5 fini, computed time 217.297168
+222.274636 #3 fini, computed time 216.948275
+222.273399 #47 fini, computed time 211.065724
+222.274280 #56 fini, computed time 212.550718
+222.274259 #45 fini, computed time 213.922734
+222.274222 #27 fini, computed time 215.788568
+222.273871 #24 fini, computed time 215.997519
+222.274293 #28 fini, computed time 212.811119
+222.273988 #12 fini, computed time 219.021285
+222.274302 #10 fini, computed time 221.500959
+222.274729 #51 fini, computed time 211.247341
+222.274079 #38 fini, computed time 213.519598
+222.274226 #42 fini, computed time 214.361838
+222.274238 #60 fini, computed time 217.002611
+222.274360 #44 fini, computed time 215.054950
+222.274180 #55 fini, computed time 213.771251
+222.274230 #23 fini, computed time 213.843520
+222.274235 #59 fini, computed time 214.300748
+222.274197 #19 fini, computed time 211.909545
+222.274241 #21 fini, computed time 210.933443
+222.274270 #6 fini, computed time 220.359012
+222.274426 #25 fini, computed time 215.071525
+222.274464 #22 fini, computed time 213.851658
+222.274936 #54 fini, computed time 211.363586
+222.275123 #16 fini, computed time 209.723278
+222.274313 #53 fini, computed time 212.934760
+222.274370 #57 fini, computed time 215.540142
+222.274553 #48 fini, computed time 208.879378
+222.274561 #26 fini, computed time 214.986448
+222.273891 #13 fini, computed time 207.896236
+222.274185 #58 fini, computed time 214.353002
+222.274598 #29 fini, computed time 216.180578
+222.274998 #61 fini, computed time 213.895374
+cat log/proc*.log | sort -n > log/proc.log

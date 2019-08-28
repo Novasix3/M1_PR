@@ -1,0 +1,97 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 3840 2160 5000
+#0 start
+#16 start
+#25 start
+#9 start
+#23 start
+#7 start
+#20 start
+#12 start
+#15 start
+#4 start
+#31 start
+#28 start
+#6 start
+#22 start
+#29 start
+#5 start
+#13 start
+#14 start
+#11 start
+#21 start
+#19 start
+#27 start
+#10 start
+#30 start
+#2 start
+#3 start
+#26 start
+#18 start
+#8 start
+#24 start
+#1 start
+#17 start
+17344.683941 #25 arrete de recevoir des taches
+17344.773132 #20 arrete de recevoir des taches
+17344.852314 #21 arrete de recevoir des taches
+17344.831008 #19 arrete de recevoir des taches
+17344.896422 #22 arrete de recevoir des taches
+17344.785278 #23 arrete de recevoir des taches
+17344.699601 #24 arrete de recevoir des taches
+17344.785087 #26 arrete de recevoir des taches
+17344.767189 #31 arrete de recevoir des taches
+17344.785963 #30 arrete de recevoir des taches
+17344.790617 #0 arrete de recevoir des taches
+17347.048758 #27 arrete de recevoir des taches
+17347.045218 #28 arrete de recevoir des taches
+17347.051672 #29 arrete de recevoir des taches
+17348.258023 #18 arrete de recevoir des taches
+17348.238860 #15 arrete de recevoir des taches
+17348.172670 #17 arrete de recevoir des taches
+17348.262041 #16 arrete de recevoir des taches
+17348.257748 #14 arrete de recevoir des taches
+17348.259657 #13 arrete de recevoir des taches
+17348.254248 #12 arrete de recevoir des taches
+17348.258763 #11 arrete de recevoir des taches
+17348.259688 #10 arrete de recevoir des taches
+17348.175271 #8 arrete de recevoir des taches
+17348.261325 #7 arrete de recevoir des taches
+17348.372969 #6 arrete de recevoir des taches
+17348.329892 #5 arrete de recevoir des taches
+17348.251396 #4 arrete de recevoir des taches
+17348.309635 #3 arrete de recevoir des taches
+17348.262516 #2 arrete de recevoir des taches
+17348.210190 #1 arrete de recevoir des taches
+17348.451865 #9 arrete de recevoir des taches
+17352.573248 #16 fini, computed time 17335.707875
+17352.485384 #24 fini, computed time 17338.120842
+17352.559974 #20 fini, computed time 17340.878555
+17352.569706 #18 fini, computed time 17339.109396
+17352.639257 #21 fini, computed time 17334.628721
+17352.484145 #17 fini, computed time 17341.549610
+17352.569589 #25 fini, computed time 17344.638692
+17352.683036 #22 fini, computed time 17337.593458
+17352.570427 #26 fini, computed time 17325.846109
+17352.570669 #29 fini, computed time 17314.875893
+17352.568971 #30 fini, computed time 17313.591611
+17352.617982 #19 fini, computed time 17337.429618
+17352.565047 #28 fini, computed time 17320.605880
+17352.571656 #23 fini, computed time 17337.270361
+17352.485694 #8 fini, computed time 17340.953694
+17352.569603 #27 fini, computed time 17317.066029
+17352.550541 #31 fini, computed time 17312.827658
+17352.569886 #9 fini, computed time 17340.647075
+17352.570891 #13 fini, computed time 17337.083086
+17352.569338 #14 fini, computed time 17334.181364
+17352.565527 #12 fini, computed time 17332.879531
+17352.550827 #15 fini, computed time 17332.815624
+17352.570799 #10 fini, computed time 17334.346773
+17352.570027 #11 fini, computed time 17335.872380
+17352.572077 #7 fini, computed time 17330.949018
+17352.560862 #4 fini, computed time 17336.878123
+17352.640296 #5 fini, computed time 17333.292689
+17352.683970 #6 fini, computed time 17333.957369
+17352.618931 #3 fini, computed time 17330.818820
+17352.571785 #2 fini, computed time 17319.872443
+17352.575538 #0 fini, computed time 17315.370916
+17352.486334 #1 fini, computed time 17326.373106

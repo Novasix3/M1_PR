@@ -1,0 +1,5 @@
+mpirun -n 1 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 600
+#0 start
+535.355004 #0 arrete de recevoir des taches
+535.375544 #0 fini
+cat log/proc*.log | sort -n > log/proc.log

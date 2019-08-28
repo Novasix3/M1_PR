@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 400
+#51 start
+#28 start
+#2 start
+#45 start
+#43 start
+#41 start
+#35 start
+#48 start
+#15 start
+#36 start
+#11 start
+#26 start
+#6 start
+#4 start
+#13 start
+#46 start
+#58 start
+#53 start
+#60 start
+#18 start
+#14 start
+#32 start
+#5 start
+#10 start
+#7 start
+#19 start
+#62 start
+#9 start
+#23 start
+#1 start
+#38 start
+#31 start
+#49 start
+#47 start
+#16 start
+#39 start
+#37 start
+#25 start
+#44 start
+#24 start
+#57 start
+#0 start
+#17 start
+#34 start
+#52 start
+#55 start
+#30 start
+#33 start
+#22 start
+#12 start
+#54 start
+#42 start
+#61 start
+#40 start
+#21 start
+#50 start
+#56 start
+#63 start
+#3 start
+#59 start
+#27 start
+#29 start
+#20 start
+#8 start
+135.254535 #17 arrete de recevoir des taches
+135.254233 #21 arrete de recevoir des taches
+135.254340 #9 arrete de recevoir des taches
+135.254350 #25 arrete de recevoir des taches
+135.254593 #16 arrete de recevoir des taches
+135.254925 #35 arrete de recevoir des taches
+135.254878 #18 arrete de recevoir des taches
+135.254895 #19 arrete de recevoir des taches
+135.255120 #22 arrete de recevoir des taches
+135.255851 #23 arrete de recevoir des taches
+135.255343 #20 arrete de recevoir des taches
+135.256989 #5 arrete de recevoir des taches
+135.257258 #13 arrete de recevoir des taches
+135.257156 #12 arrete de recevoir des taches
+135.257258 #4 arrete de recevoir des taches
+135.257720 #2 arrete de recevoir des taches
+135.257711 #3 arrete de recevoir des taches
+135.258444 #6 arrete de recevoir des taches
+135.257882 #7 arrete de recevoir des taches
+135.257946 #11 arrete de recevoir des taches
+135.257730 #14 arrete de recevoir des taches
+135.257741 #15 arrete de recevoir des taches
+135.258467 #10 arrete de recevoir des taches
+137.491787 #52 arrete de recevoir des taches
+137.492135 #28 arrete de recevoir des taches
+137.491872 #29 arrete de recevoir des taches
+137.492092 #45 arrete de recevoir des taches
+137.492025 #37 arrete de recevoir des taches
+137.492128 #53 arrete de recevoir des taches
+137.492038 #33 arrete de recevoir des taches
+137.492160 #8 arrete de recevoir des taches
+137.492282 #41 arrete de recevoir des taches
+137.492169 #36 arrete de recevoir des taches
+137.492155 #44 arrete de recevoir des taches
+137.492191 #32 arrete de recevoir des taches
+137.492947 #40 arrete de recevoir des taches
+137.492713 #34 arrete de recevoir des taches
+137.492228 #49 arrete de recevoir des taches
+137.492380 #26 arrete de recevoir des taches
+137.492291 #27 arrete de recevoir des taches
+137.492523 #24 arrete de recevoir des taches
+137.493108 #57 arrete de recevoir des taches
+137.492368 #61 arrete de recevoir des taches
+137.492444 #60 arrete de recevoir des taches
+137.492496 #48 arrete de recevoir des taches
+137.492585 #46 arrete de recevoir des taches
+137.492441 #38 arrete de recevoir des taches
+137.492526 #30 arrete de recevoir des taches
+137.492564 #1 arrete de recevoir des taches
+137.492712 #56 arrete de recevoir des taches
+137.492725 #42 arrete de recevoir des taches
+137.493044 #0 arrete de recevoir des taches
+137.492817 #47 arrete de recevoir des taches
+137.492841 #43 arrete de recevoir des taches
+137.492712 #31 arrete de recevoir des taches
+137.492820 #54 arrete de recevoir des taches
+137.492769 #59 arrete de recevoir des taches
+137.492785 #50 arrete de recevoir des taches
+137.493061 #62 arrete de recevoir des taches
+137.492961 #39 arrete de recevoir des taches
+137.493001 #58 arrete de recevoir des taches
+137.493076 #55 arrete de recevoir des taches
+137.493189 #63 arrete de recevoir des taches
+137.494029 #51 arrete de recevoir des taches
+138.222896 #36 fini, computed time 132.855034
+138.223596 #40 fini, computed time 131.007668
+138.222979 #8 fini, computed time 131.836019
+138.223468 #0 fini, computed time 131.854142
+138.223493 #34 fini, computed time 132.432528
+138.223162 #30 fini, computed time 127.189093
+138.223046 #33 fini, computed time 131.881932
+138.223250 #62 fini, computed time 126.287382
+138.223230 #31 fini, computed time 130.411141
+138.223309 #38 fini, computed time 127.284391
+138.223321 #63 fini, computed time 128.299301
+138.223480 #4 fini, computed time 133.042147
+138.223617 #46 fini, computed time 125.572859
+138.223558 #14 fini, computed time 127.563464
+138.223481 #50 fini, computed time 126.627674
+138.223531 #44 fini, computed time 129.766414
+138.223589 #18 fini, computed time 127.686146
+138.223746 #47 fini, computed time 125.127528
+138.224345 #6 fini, computed time 132.606934
+138.223650 #37 fini, computed time 129.121218
+138.224033 #17 fini, computed time 132.216836
+138.223782 #2 fini, computed time 130.377816
+138.223606 #9 fini, computed time 134.805579
+138.223830 #35 fini, computed time 133.404159
+138.223562 #15 fini, computed time 128.060711
+138.223781 #25 fini, computed time 135.247834
+138.223831 #41 fini, computed time 134.792105
+138.224441 #57 fini, computed time 131.522860
+138.223926 #5 fini, computed time 130.670554
+138.223886 #53 fini, computed time 129.398221
+138.223715 #21 fini, computed time 126.456957
+138.223844 #52 fini, computed time 127.971329
+138.223830 #12 fini, computed time 133.092895
+138.223939 #24 fini, computed time 130.654053
+138.223878 #1 fini, computed time 137.485338
+138.223755 #32 fini, computed time 127.220147
+138.223999 #56 fini, computed time 130.069509
+138.223805 #20 fini, computed time 128.372805
+138.224025 #7 fini, computed time 130.345332
+138.223849 #49 fini, computed time 131.652637
+138.224011 #39 fini, computed time 129.719429
+138.223975 #43 fini, computed time 133.761858
+138.223953 #3 fini, computed time 134.988158
+138.224461 #51 fini, computed time 128.697898
+138.224680 #23 fini, computed time 123.676458
+138.224166 #22 fini, computed time 126.821383
+138.224051 #54 fini, computed time 129.612034
+138.224058 #10 fini, computed time 132.056669
+138.223965 #55 fini, computed time 127.961323
+138.224245 #45 fini, computed time 124.023749
+138.224085 #42 fini, computed time 131.398411
+138.224067 #19 fini, computed time 127.731423
+138.224210 #13 fini, computed time 130.157708
+138.224074 #16 fini, computed time 131.374405
+138.224442 #28 fini, computed time 127.424889
+138.224194 #60 fini, computed time 130.273246
+138.224206 #48 fini, computed time 128.689547
+138.224256 #29 fini, computed time 127.974630
+138.224365 #11 fini, computed time 134.932342
+138.224288 #61 fini, computed time 128.981341
+138.224475 #26 fini, computed time 129.644101
+138.224632 #58 fini, computed time 131.104438
+138.224770 #59 fini, computed time 134.211612
+138.224597 #27 fini, computed time 130.848932
+cat log/proc*.log | sort -n > log/proc.log

@@ -1,6 +1,6 @@
 /*
- * Sorbonne Universitï¿½ 
- * Calcul de l'ensemble de Mandelbrot, Version sï¿½quentielle
+ * Sorbonne Universit� 
+ * Calcul de l'ensemble de Mandelbrot, Version s�quentielle
  */
 
 #include <stdlib.h>
@@ -49,7 +49,7 @@ double my_gettimeofday(){
 
 /**
  * Convertion entier (4 octets) LINUX en un entier SUN
- * @param i entier ï¿½ convertir
+ * @param i entier � convertir
  * @return entier converti
  */
 
@@ -118,7 +118,7 @@ unsigned char cos_composante(int i, double freq) {
 
 
 /**
- *  Sauvegarde le tableau de donnï¿½es au format rasterfile
+ *  Sauvegarde le tableau de donn�es au format rasterfile
  *  8 bits avec une palette de 256 niveaux de gris du blanc (valeur 0)
  *  vers le noir (255)
  *    @param nom Nom de l'image
@@ -181,19 +181,19 @@ void sauver_rasterfile( char *nom, int largeur, int hauteur, unsigned char *p) {
 }
 
 /**
- * ï¿½tant donnï¿½e les coordonnï¿½es d'un point \f$c=a+ib\f$ dans le plan
+ * �tant donn�e les coordonn�es d'un point \f$c=a+ib\f$ dans le plan
  * complexe, la fonction retourne la couleur correspondante estimant
- * ï¿½ quelle distance de l'ensemble de mandelbrot le point est.
- * Soit la suite complexe dï¿½fini par:
+ * � quelle distance de l'ensemble de mandelbrot le point est.
+ * Soit la suite complexe d�fini par:
  * \f[
  * \left\{\begin{array}{l}
  * z_0 = 0 \\
  * z_{n+1} = z_n^2 + c
  * \end{array}\right.
  * \f]
- * le nombre d'itï¿½rations que la suite met pour diverger est le
+ * le nombre d'it�rations que la suite met pour diverger est le
  * nombre \f$ n \f$ pour lequel \f$ |z_n| > 2 \f$. 
- * Ce nombre est ramenï¿½ ï¿½ une valeur entre 0 et 255 correspond ainsi a 
+ * Ce nombre est ramen� � une valeur entre 0 et 255 correspond ainsi a 
  * une couleur dans la palette des couleurs.
  */
 
@@ -203,7 +203,7 @@ unsigned char xy2color(double a, double b, int prof) {
 
   x = y = 0.;
   for( i=0; i<prof; i++) {
-    /* garder la valeur prï¿½cï¿½dente de x qui va etre ecrase */
+    /* garder la valeur pr�c�dente de x qui va etre ecrase */
     temp = x;
     /* nouvelles valeurs de x et y */
     x2 = x*x;
@@ -291,7 +291,7 @@ int main(int argc, char *argv[]) {
   }
   
   if( ima == NULL) {
-    fprintf( stderr, "Erreur allocation mï¿½moire du tableau \n");
+    fprintf( stderr, "Erreur allocation m�moire du tableau \n");
     return 0;
   }
 

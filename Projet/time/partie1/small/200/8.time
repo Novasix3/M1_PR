@@ -1,0 +1,26 @@
+mpirun -n 8 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 200
+#0 start
+#3 start
+#7 start
+#5 start
+#1 start
+#4 start
+#2 start
+#6 start
+22.782567 #0 arrete de recevoir des taches
+22.782282 #1 arrete de recevoir des taches
+22.782405 #7 arrete de recevoir des taches
+22.782270 #2 arrete de recevoir des taches
+22.783406 #4 arrete de recevoir des taches
+22.783391 #5 arrete de recevoir des taches
+22.783227 #6 arrete de recevoir des taches
+22.783625 #3 arrete de recevoir des taches
+22.816582 #0 fini, computed time 22.780238
+22.816329 #4 fini, computed time 21.932783
+22.816422 #1 fini, computed time 22.338056
+22.816414 #2 fini, computed time 22.189266
+22.816785 #3 fini, computed time 22.018214
+22.816501 #5 fini, computed time 21.974377
+22.816420 #6 fini, computed time 21.928004
+22.816876 #7 fini, computed time 21.908934
+cat log/proc*.log | sort -n > log/proc.log

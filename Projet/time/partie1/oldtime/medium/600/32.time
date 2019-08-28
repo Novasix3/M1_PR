@@ -1,0 +1,98 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 600
+#0 start
+#17 start
+#3 start
+#21 start
+#23 start
+#15 start
+#1 start
+#27 start
+#2 start
+#24 start
+#22 start
+#12 start
+#9 start
+#20 start
+#4 start
+#6 start
+#18 start
+#10 start
+#19 start
+#5 start
+#7 start
+#29 start
+#26 start
+#8 start
+#14 start
+#16 start
+#13 start
+#11 start
+#25 start
+#31 start
+#30 start
+#28 start
+380.734942 #7 arrete de recevoir des taches
+380.732492 #3 arrete de recevoir des taches
+380.734772 #23 arrete de recevoir des taches
+380.734768 #31 arrete de recevoir des taches
+380.735057 #11 arrete de recevoir des taches
+380.735495 #22 arrete de recevoir des taches
+380.735246 #30 arrete de recevoir des taches
+380.735887 #2 arrete de recevoir des taches
+380.735232 #28 arrete de recevoir des taches
+380.741287 #24 arrete de recevoir des taches
+380.741086 #18 arrete de recevoir des taches
+380.741934 #0 arrete de recevoir des taches
+380.741925 #17 arrete de recevoir des taches
+380.741378 #19 arrete de recevoir des taches
+380.740922 #9 arrete de recevoir des taches
+380.739621 #8 arrete de recevoir des taches
+380.739014 #20 arrete de recevoir des taches
+380.741273 #1 arrete de recevoir des taches
+380.741047 #5 arrete de recevoir des taches
+380.740874 #26 arrete de recevoir des taches
+380.740922 #14 arrete de recevoir des taches
+380.741766 #21 arrete de recevoir des taches
+380.741239 #15 arrete de recevoir des taches
+380.741424 #27 arrete de recevoir des taches
+380.740876 #16 arrete de recevoir des taches
+380.741759 #4 arrete de recevoir des taches
+380.741008 #12 arrete de recevoir des taches
+380.741066 #13 arrete de recevoir des taches
+380.740999 #29 arrete de recevoir des taches
+380.741593 #10 arrete de recevoir des taches
+380.741177 #6 arrete de recevoir des taches
+380.739964 #25 arrete de recevoir des taches
+381.446556 #0 fini
+381.445749 #6 fini
+381.445792 #22 fini
+381.445633 #14 fini
+381.445684 #30 fini
+381.446858 #17 fini
+381.446116 #15 fini
+381.446524 #7 fini
+381.446121 #23 fini
+381.446354 #18 fini
+381.444038 #20 fini
+381.446680 #4 fini
+381.446608 #19 fini
+381.446092 #31 fini
+381.444255 #3 fini
+381.446080 #16 fini
+381.446692 #1 fini
+381.446732 #27 fini
+381.446820 #2 fini
+381.446160 #11 fini
+381.446294 #12 fini
+381.446280 #28 fini
+381.445277 #25 fini
+381.446559 #9 fini
+381.447072 #10 fini
+381.447474 #21 fini
+381.445498 #8 fini
+381.447424 #24 fini
+381.446659 #26 fini
+381.446949 #5 fini
+381.446934 #29 fini
+381.447014 #13 fini
+cat log/proc*.log | sort -n > log/proc.log

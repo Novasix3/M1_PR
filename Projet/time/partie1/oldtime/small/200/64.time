@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 200
+#17 start
+#34 start
+#36 start
+#1 start
+#56 start
+#53 start
+#58 start
+#35 start
+#55 start
+#24 start
+#52 start
+#22 start
+#6 start
+#43 start
+#0 start
+#51 start
+#25 start
+#2 start
+#21 start
+#28 start
+#7 start
+#18 start
+#5 start
+#23 start
+#31 start
+#16 start
+#32 start
+#19 start
+#38 start
+#41 start
+#39 start
+#40 start
+#54 start
+#59 start
+#4 start
+#45 start
+#57 start
+#9 start
+#14 start
+#30 start
+#3 start
+#8 start
+#33 start
+#12 start
+#49 start
+#10 start
+#62 start
+#26 start
+#48 start
+#13 start
+#37 start
+#42 start
+#50 start
+#63 start
+#15 start
+#27 start
+#11 start
+#60 start
+#47 start
+#20 start
+#46 start
+#44 start
+#29 start
+#61 start
+3.133508 #8 arrete de recevoir des taches
+3.414723 #7 arrete de recevoir des taches
+3.424881 #3 arrete de recevoir des taches
+3.434712 #4 arrete de recevoir des taches
+3.445432 #5 arrete de recevoir des taches
+3.457333 #6 arrete de recevoir des taches
+3.477459 #2 arrete de recevoir des taches
+3.518599 #1 arrete de recevoir des taches
+3.555998 #0 arrete de recevoir des taches
+3.574800 #51 arrete de recevoir des taches
+3.610615 #9 arrete de recevoir des taches
+3.613058 #19 arrete de recevoir des taches
+3.701257 #21 arrete de recevoir des taches
+3.720658 #22 arrete de recevoir des taches
+3.800741 #23 arrete de recevoir des taches
+3.859206 #24 arrete de recevoir des taches
+4.009380 #10 arrete de recevoir des taches
+4.009893 #17 arrete de recevoir des taches
+4.009444 #11 arrete de recevoir des taches
+4.009441 #15 arrete de recevoir des taches
+4.009947 #34 arrete de recevoir des taches
+4.009569 #28 arrete de recevoir des taches
+4.009485 #16 arrete de recevoir des taches
+4.009527 #27 arrete de recevoir des taches
+4.009805 #36 arrete de recevoir des taches
+4.009417 #29 arrete de recevoir des taches
+4.009669 #31 arrete de recevoir des taches
+4.009618 #44 arrete de recevoir des taches
+4.009685 #45 arrete de recevoir des taches
+4.009610 #30 arrete de recevoir des taches
+4.009662 #48 arrete de recevoir des taches
+4.009759 #62 arrete de recevoir des taches
+4.009762 #20 arrete de recevoir des taches
+4.009616 #46 arrete de recevoir des taches
+4.009908 #38 arrete de recevoir des taches
+4.009693 #47 arrete de recevoir des taches
+4.009817 #37 arrete de recevoir des taches
+4.009728 #33 arrete de recevoir des taches
+4.009986 #35 arrete de recevoir des taches
+4.009948 #43 arrete de recevoir des taches
+4.009885 #49 arrete de recevoir des taches
+4.010133 #53 arrete de recevoir des taches
+4.010060 #52 arrete de recevoir des taches
+4.010052 #55 arrete de recevoir des taches
+4.009264 #42 arrete de recevoir des taches
+4.010027 #54 arrete de recevoir des taches
+4.009872 #50 arrete de recevoir des taches
+4.010207 #41 arrete de recevoir des taches
+4.010151 #18 arrete de recevoir des taches
+4.010128 #56 arrete de recevoir des taches
+4.010213 #57 arrete de recevoir des taches
+4.010039 #60 arrete de recevoir des taches
+4.009433 #25 arrete de recevoir des taches
+4.009967 #12 arrete de recevoir des taches
+4.010134 #32 arrete de recevoir des taches
+4.010352 #58 arrete de recevoir des taches
+4.010143 #39 arrete de recevoir des taches
+4.010199 #40 arrete de recevoir des taches
+4.010188 #26 arrete de recevoir des taches
+4.010042 #14 arrete de recevoir des taches
+4.010157 #13 arrete de recevoir des taches
+4.009441 #59 arrete de recevoir des taches
+4.010051 #63 arrete de recevoir des taches
+4.009968 #61 arrete de recevoir des taches
+4.056765 #34 fini
+4.056407 #2 fini
+4.056528 #6 fini
+4.056561 #7 fini
+4.056617 #35 fini
+4.056447 #3 fini
+4.056917 #0 fini
+4.056401 #33 fini
+4.056620 #39 fini
+4.056704 #38 fini
+4.056631 #62 fini
+4.056699 #31 fini
+4.056593 #30 fini
+4.056900 #1 fini
+4.056596 #63 fini
+4.056693 #32 fini
+4.056829 #18 fini
+4.056776 #11 fini
+4.056839 #5 fini
+4.056902 #22 fini
+4.057230 #17 fini
+4.056859 #43 fini
+4.056800 #37 fini
+4.056904 #41 fini
+4.057247 #51 fini
+4.056855 #9 fini
+4.056717 #50 fini
+4.056926 #19 fini
+4.056851 #54 fini
+4.056889 #15 fini
+4.057090 #23 fini
+4.056910 #47 fini
+4.056943 #49 fini
+4.057014 #14 fini
+4.057051 #16 fini
+4.056948 #46 fini
+4.057113 #10 fini
+4.057237 #55 fini
+4.057215 #45 fini
+4.057031 #48 fini
+4.057405 #36 fini
+4.057255 #4 fini
+4.057121 #13 fini
+4.057376 #40 fini
+4.057337 #26 fini
+4.057294 #25 fini
+4.057192 #42 fini
+4.057251 #8 fini
+4.057395 #21 fini
+4.057482 #58 fini
+4.057390 #57 fini
+4.057558 #53 fini
+4.057363 #27 fini
+4.057498 #59 fini
+4.057323 #29 fini
+4.057502 #20 fini
+4.057494 #61 fini
+4.057685 #52 fini
+4.057633 #28 fini
+4.057713 #24 fini
+4.057674 #60 fini
+4.057521 #12 fini
+4.057595 #44 fini
+4.057815 #56 fini
+cat log/proc*.log | sort -n > log/proc.log

@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 600
+#0 start
+#51 start
+#17 start
+#34 start
+#53 start
+#18 start
+#57 start
+#3 start
+#9 start
+#8 start
+#24 start
+#4 start
+#35 start
+#6 start
+#37 start
+#26 start
+#25 start
+#31 start
+#23 start
+#54 start
+#60 start
+#42 start
+#21 start
+#1 start
+#40 start
+#20 start
+#59 start
+#58 start
+#15 start
+#5 start
+#55 start
+#2 start
+#52 start
+#43 start
+#7 start
+#56 start
+#29 start
+#30 start
+#50 start
+#38 start
+#36 start
+#41 start
+#49 start
+#48 start
+#39 start
+#12 start
+#10 start
+#47 start
+#28 start
+#19 start
+#32 start
+#14 start
+#63 start
+#27 start
+#13 start
+#62 start
+#16 start
+#22 start
+#46 start
+#44 start
+#45 start
+#33 start
+#61 start
+#11 start
+10.261358 #7 arrete de recevoir des taches
+10.380864 #5 arrete de recevoir des taches
+10.456127 #3 arrete de recevoir des taches
+10.677311 #0 arrete de recevoir des taches
+11.601481 #6 arrete de recevoir des taches
+11.709027 #4 arrete de recevoir des taches
+11.932366 #2 arrete de recevoir des taches
+11.950279 #1 arrete de recevoir des taches
+11.981955 #35 arrete de recevoir des taches
+12.013570 #53 arrete de recevoir des taches
+12.037554 #37 arrete de recevoir des taches
+12.222403 #9 arrete de recevoir des taches
+12.222235 #10 arrete de recevoir des taches
+12.222217 #11 arrete de recevoir des taches
+12.222710 #17 arrete de recevoir des taches
+12.222257 #12 arrete de recevoir des taches
+12.222272 #13 arrete de recevoir des taches
+12.222288 #14 arrete de recevoir des taches
+12.222599 #21 arrete de recevoir des taches
+12.222445 #15 arrete de recevoir des taches
+12.222288 #16 arrete de recevoir des taches
+12.222536 #19 arrete de recevoir des taches
+12.222636 #26 arrete de recevoir des taches
+12.222395 #22 arrete de recevoir des taches
+12.222603 #25 arrete de recevoir des taches
+12.222607 #29 arrete de recevoir des taches
+12.222517 #27 arrete de recevoir des taches
+12.222566 #28 arrete de recevoir des taches
+12.222662 #36 arrete de recevoir des taches
+12.222650 #31 arrete de recevoir des taches
+12.222574 #30 arrete de recevoir des taches
+12.222676 #43 arrete de recevoir des taches
+12.222687 #42 arrete de recevoir des taches
+12.222694 #32 arrete de recevoir des taches
+12.222599 #46 arrete de recevoir des taches
+12.222581 #44 arrete de recevoir des taches
+12.222630 #45 arrete de recevoir des taches
+12.222747 #54 arrete de recevoir des taches
+12.222679 #56 arrete de recevoir des taches
+12.222913 #60 arrete de recevoir des taches
+12.222227 #41 arrete de recevoir des taches
+12.222791 #62 arrete de recevoir des taches
+12.222917 #8 arrete de recevoir des taches
+12.222416 #24 arrete de recevoir des taches
+12.223190 #51 arrete de recevoir des taches
+12.222712 #61 arrete de recevoir des taches
+12.222409 #58 arrete de recevoir des taches
+12.222970 #38 arrete de recevoir des taches
+12.223039 #18 arrete de recevoir des taches
+12.223009 #40 arrete de recevoir des taches
+12.222798 #63 arrete de recevoir des taches
+12.222932 #59 arrete de recevoir des taches
+12.222984 #55 arrete de recevoir des taches
+12.223028 #52 arrete de recevoir des taches
+12.222947 #20 arrete de recevoir des taches
+12.222982 #49 arrete de recevoir des taches
+12.222882 #50 arrete de recevoir des taches
+12.223336 #34 arrete de recevoir des taches
+12.223151 #57 arrete de recevoir des taches
+12.222895 #48 arrete de recevoir des taches
+12.222924 #39 arrete de recevoir des taches
+12.222938 #47 arrete de recevoir des taches
+12.223187 #23 arrete de recevoir des taches
+12.222948 #33 arrete de recevoir des taches
+12.264044 #0 fini
+12.263904 #3 fini
+12.264159 #34 fini
+12.263877 #32 fini
+12.263923 #7 fini
+12.263725 #33 fini
+12.263972 #2 fini
+12.264134 #35 fini
+12.263926 #39 fini
+12.264054 #31 fini
+12.263958 #63 fini
+12.264468 #17 fini
+12.264298 #38 fini
+12.264280 #1 fini
+12.264309 #6 fini
+12.264282 #9 fini
+12.264105 #11 fini
+12.264080 #16 fini
+12.264203 #43 fini
+12.264175 #41 fini
+12.264256 #5 fini
+12.264224 #10 fini
+12.264661 #51 fini
+12.264356 #19 fini
+12.264518 #18 fini
+12.264381 #37 fini
+12.264413 #42 fini
+12.264329 #49 fini
+12.264245 #48 fini
+12.264250 #30 fini
+12.264308 #62 fini
+12.264525 #4 fini
+12.264337 #15 fini
+12.264277 #47 fini
+12.264367 #50 fini
+12.264502 #36 fini
+12.264543 #8 fini
+12.264400 #27 fini
+12.264553 #59 fini
+12.264626 #24 fini
+12.264427 #22 fini
+12.264572 #54 fini
+12.264512 #56 fini
+12.264710 #26 fini
+12.264773 #21 fini
+12.264760 #40 fini
+12.264779 #23 fini
+12.264720 #58 fini
+12.264815 #55 fini
+12.264864 #53 fini
+12.264626 #14 fini
+12.264962 #57 fini
+12.264818 #25 fini
+12.264652 #46 fini
+12.264717 #44 fini
+12.264816 #20 fini
+12.264689 #13 fini
+12.264689 #12 fini
+12.264766 #45 fini
+12.265009 #52 fini
+12.265030 #29 fini
+12.264967 #61 fini
+12.265102 #28 fini
+12.265309 #60 fini
+cat log/proc*.log | sort -n > log/proc.log

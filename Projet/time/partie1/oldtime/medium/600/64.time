@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 600
+#0 start
+#17 start
+#34 start
+#51 start
+#18 start
+#23 start
+#21 start
+#37 start
+#59 start
+#57 start
+#36 start
+#35 start
+#40 start
+#38 start
+#20 start
+#8 start
+#15 start
+#41 start
+#14 start
+#1 start
+#55 start
+#3 start
+#19 start
+#52 start
+#6 start
+#4 start
+#54 start
+#25 start
+#32 start
+#27 start
+#2 start
+#58 start
+#48 start
+#29 start
+#5 start
+#47 start
+#49 start
+#44 start
+#53 start
+#24 start
+#31 start
+#22 start
+#30 start
+#33 start
+#42 start
+#10 start
+#7 start
+#9 start
+#63 start
+#39 start
+#13 start
+#50 start
+#11 start
+#61 start
+#26 start
+#46 start
+#56 start
+#16 start
+#28 start
+#43 start
+#12 start
+#62 start
+#60 start
+#45 start
+206.327237 #38 arrete de recevoir des taches
+206.327238 #35 arrete de recevoir des taches
+206.327350 #46 arrete de recevoir des taches
+206.326880 #42 arrete de recevoir des taches
+206.327891 #36 arrete de recevoir des taches
+206.328045 #55 arrete de recevoir des taches
+206.327991 #40 arrete de recevoir des taches
+206.327851 #52 arrete de recevoir des taches
+206.328301 #32 arrete de recevoir des taches
+206.329849 #6 arrete de recevoir des taches
+206.328885 #54 arrete de recevoir des taches
+206.330511 #58 arrete de recevoir des taches
+206.330017 #9 arrete de recevoir des taches
+206.330075 #63 arrete de recevoir des taches
+206.330432 #15 arrete de recevoir des taches
+206.330441 #10 arrete de recevoir des taches
+206.330483 #7 arrete de recevoir des taches
+206.330106 #60 arrete de recevoir des taches
+206.330098 #11 arrete de recevoir des taches
+206.330279 #56 arrete de recevoir des taches
+206.330210 #43 arrete de recevoir des taches
+206.330663 #44 arrete de recevoir des taches
+206.330253 #45 arrete de recevoir des taches
+206.330595 #49 arrete de recevoir des taches
+206.330306 #29 arrete de recevoir des taches
+206.330173 #16 arrete de recevoir des taches
+206.330368 #48 arrete de recevoir des taches
+206.330505 #22 arrete de recevoir des taches
+206.330488 #47 arrete de recevoir des taches
+206.330976 #19 arrete de recevoir des taches
+206.329687 #59 arrete de recevoir des taches
+206.330986 #18 arrete de recevoir des taches
+206.329713 #25 arrete de recevoir des taches
+206.332171 #21 arrete de recevoir des taches
+206.729028 #4 arrete de recevoir des taches
+206.729102 #2 arrete de recevoir des taches
+206.729947 #34 arrete de recevoir des taches
+206.730026 #0 arrete de recevoir des taches
+206.730067 #1 arrete de recevoir des taches
+206.731373 #61 arrete de recevoir des taches
+206.816609 #62 arrete de recevoir des taches
+206.817476 #17 arrete de recevoir des taches
+206.817002 #5 arrete de recevoir des taches
+206.817505 #23 arrete de recevoir des taches
+206.817271 #8 arrete de recevoir des taches
+206.817713 #12 arrete de recevoir des taches
+206.817731 #13 arrete de recevoir des taches
+206.818595 #51 arrete de recevoir des taches
+206.818270 #27 arrete de recevoir des taches
+206.818398 #41 arrete de recevoir des taches
+206.817833 #31 arrete de recevoir des taches
+206.817835 #26 arrete de recevoir des taches
+206.817825 #50 arrete de recevoir des taches
+206.818256 #53 arrete de recevoir des taches
+206.818009 #33 arrete de recevoir des taches
+206.818074 #14 arrete de recevoir des taches
+206.818173 #39 arrete de recevoir des taches
+206.818122 #30 arrete de recevoir des taches
+206.818002 #28 arrete de recevoir des taches
+206.817112 #20 arrete de recevoir des taches
+206.817385 #37 arrete de recevoir des taches
+207.340676 #57 arrete de recevoir des taches
+207.339868 #3 arrete de recevoir des taches
+207.341430 #24 arrete de recevoir des taches
+208.053691 #32 fini
+208.053524 #33 fini
+208.054185 #38 fini
+208.052657 #37 fini
+208.053829 #5 fini
+208.054499 #0 fini
+208.053849 #6 fini
+208.054195 #44 fini
+208.053794 #30 fini
+208.053740 #62 fini
+208.054596 #17 fini
+208.053780 #12 fini
+208.054107 #1 fini
+208.054210 #49 fini
+208.053828 #16 fini
+208.053949 #45 fini
+208.054515 #4 fini
+208.052972 #20 fini
+208.054384 #36 fini
+208.053995 #48 fini
+208.054041 #63 fini
+208.054061 #13 fini
+208.054296 #52 fini
+208.054640 #21 fini
+208.054434 #53 fini
+208.054873 #34 fini
+208.054114 #31 fini
+208.054167 #28 fini
+208.054515 #35 fini
+208.053131 #54 fini
+208.053624 #42 fini
+208.054161 #60 fini
+208.054173 #46 fini
+208.054360 #22 fini
+208.054291 #9 fini
+208.054320 #29 fini
+208.055097 #51 fini
+208.054685 #61 fini
+208.054386 #14 fini
+208.053336 #3 fini
+208.053856 #25 fini
+208.054693 #15 fini
+208.054792 #10 fini
+208.054822 #19 fini
+208.054901 #41 fini
+208.054742 #57 fini
+208.054574 #47 fini
+208.054914 #2 fini
+208.054561 #43 fini
+208.054911 #18 fini
+208.054828 #40 fini
+208.054161 #8 fini
+208.055031 #7 fini
+208.054617 #11 fini
+208.054768 #39 fini
+208.054566 #50 fini
+208.055321 #58 fini
+208.054741 #26 fini
+208.055209 #27 fini
+208.055146 #23 fini
+208.055350 #55 fini
+208.054458 #59 fini
+208.055452 #24 fini
+208.055111 #56 fini
+cat log/proc*.log | sort -n > log/proc.log

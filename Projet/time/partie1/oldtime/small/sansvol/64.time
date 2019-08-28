@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 320 200 600
+#34 start
+#51 start
+#19 start
+#1 start
+#21 start
+#2 start
+#52 start
+#38 start
+#36 start
+#31 start
+#40 start
+#15 start
+#10 start
+#0 start
+#17 start
+#29 start
+#41 start
+#18 start
+#4 start
+#53 start
+#14 start
+#23 start
+#49 start
+#61 start
+#46 start
+#24 start
+#20 start
+#45 start
+#35 start
+#55 start
+#48 start
+#6 start
+#32 start
+#44 start
+#12 start
+#7 start
+#43 start
+#8 start
+#13 start
+#11 start
+#50 start
+#57 start
+#27 start
+#63 start
+#58 start
+#37 start
+#5 start
+#60 start
+#25 start
+#28 start
+#16 start
+#54 start
+#22 start
+#9 start
+#59 start
+#30 start
+#62 start
+#33 start
+#3 start
+#39 start
+#26 start
+#42 start
+#47 start
+#56 start
+7.830767 #49 arrete de recevoir des taches
+7.932964 #58 arrete de recevoir des taches
+7.953106 #61 arrete de recevoir des taches
+7.986503 #46 arrete de recevoir des taches
+8.049750 #31 arrete de recevoir des taches
+8.052251 #43 arrete de recevoir des taches
+8.115366 #30 arrete de recevoir des taches
+8.120194 #37 arrete de recevoir des taches
+8.122373 #34 arrete de recevoir des taches
+8.152361 #33 arrete de recevoir des taches
+8.181975 #62 arrete de recevoir des taches
+8.222208 #59 arrete de recevoir des taches
+8.258582 #50 arrete de recevoir des taches
+8.268061 #56 arrete de recevoir des taches
+8.275862 #47 arrete de recevoir des taches
+8.385319 #39 arrete de recevoir des taches
+8.410756 #48 arrete de recevoir des taches
+8.424937 #44 arrete de recevoir des taches
+8.442350 #28 arrete de recevoir des taches
+8.450021 #42 arrete de recevoir des taches
+8.461227 #32 arrete de recevoir des taches
+8.476696 #41 arrete de recevoir des taches
+8.543263 #51 arrete de recevoir des taches
+8.564369 #45 arrete de recevoir des taches
+8.597022 #54 arrete de recevoir des taches
+8.627698 #60 arrete de recevoir des taches
+8.651322 #29 arrete de recevoir des taches
+8.711653 #63 arrete de recevoir des taches
+8.758663 #27 arrete de recevoir des taches
+8.847400 #15 arrete de recevoir des taches
+8.861785 #24 arrete de recevoir des taches
+8.863154 #52 arrete de recevoir des taches
+8.930767 #55 arrete de recevoir des taches
+8.992228 #12 arrete de recevoir des taches
+9.036047 #9 arrete de recevoir des taches
+9.090677 #13 arrete de recevoir des taches
+9.097778 #25 arrete de recevoir des taches
+9.131873 #40 arrete de recevoir des taches
+9.147649 #16 arrete de recevoir des taches
+9.153835 #10 arrete de recevoir des taches
+9.198583 #7 arrete de recevoir des taches
+9.205244 #22 arrete de recevoir des taches
+9.216991 #36 arrete de recevoir des taches
+9.283498 #3 arrete de recevoir des taches
+9.323673 #53 arrete de recevoir des taches
+9.346371 #26 arrete de recevoir des taches
+9.377515 #0 arrete de recevoir des taches
+9.391795 #14 arrete de recevoir des taches
+9.466476 #20 arrete de recevoir des taches
+9.497402 #17 arrete de recevoir des taches
+9.554017 #38 arrete de recevoir des taches
+9.573922 #35 arrete de recevoir des taches
+9.630653 #5 arrete de recevoir des taches
+9.663462 #8 arrete de recevoir des taches
+9.736438 #57 arrete de recevoir des taches
+9.805491 #11 arrete de recevoir des taches
+10.045807 #21 arrete de recevoir des taches
+10.152837 #18 arrete de recevoir des taches
+10.305956 #6 arrete de recevoir des taches
+10.373135 #4 arrete de recevoir des taches
+10.417416 #19 arrete de recevoir des taches
+10.438595 #1 arrete de recevoir des taches
+10.499691 #23 arrete de recevoir des taches
+10.630642 #2 arrete de recevoir des taches
+10.662914 #0 fini
+10.663258 #34 fini
+10.662857 #31 fini
+10.662938 #63 fini
+10.662843 #30 fini
+10.663181 #2 fini
+10.663105 #3 fini
+10.663074 #62 fini
+10.663280 #35 fini
+10.663418 #38 fini
+10.663701 #51 fini
+10.663494 #19 fini
+10.663346 #6 fini
+10.663362 #7 fini
+10.663426 #14 fini
+10.663431 #15 fini
+10.663212 #39 fini
+10.663337 #47 fini
+10.663557 #18 fini
+10.663515 #46 fini
+10.663574 #36 fini
+10.663594 #48 fini
+10.663922 #17 fini
+10.663635 #23 fini
+10.663582 #10 fini
+10.663648 #41 fini
+10.663470 #9 fini
+10.663422 #42 fini
+10.663494 #11 fini
+10.663729 #4 fini
+10.663549 #43 fini
+10.663461 #50 fini
+10.663397 #16 fini
+10.663756 #55 fini
+10.663794 #40 fini
+10.663584 #8 fini
+10.663784 #49 fini
+10.663613 #22 fini
+10.663721 #25 fini
+10.663834 #57 fini
+10.663760 #37 fini
+10.663680 #5 fini
+10.663810 #26 fini
+10.663834 #27 fini
+10.663905 #58 fini
+10.664069 #52 fini
+10.663762 #54 fini
+10.663806 #56 fini
+10.663855 #59 fini
+10.663817 #20 fini
+10.663984 #12 fini
+10.663960 #24 fini
+10.664065 #44 fini
+10.664318 #21 fini
+10.664279 #53 fini
+10.664230 #13 fini
+10.664335 #45 fini
+10.664298 #28 fini
+10.664435 #60 fini
+10.664743 #61 fini
+10.664752 #29 fini
+10.671792 #32 fini
+10.672984 #1 fini
+10.672774 #33 fini
+cat log/proc*.log | sort -n > log/proc.log

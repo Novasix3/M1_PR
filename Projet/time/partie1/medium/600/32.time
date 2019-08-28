@@ -1,0 +1,98 @@
+mpirun -n 32 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 600
+#17 start
+#2 start
+#20 start
+#24 start
+#19 start
+#3 start
+#0 start
+#7 start
+#13 start
+#16 start
+#12 start
+#14 start
+#27 start
+#4 start
+#9 start
+#30 start
+#29 start
+#31 start
+#10 start
+#5 start
+#21 start
+#11 start
+#26 start
+#8 start
+#18 start
+#22 start
+#15 start
+#28 start
+#6 start
+#25 start
+#1 start
+#23 start
+387.170410 #30 arrete de recevoir des taches
+387.378360 #17 arrete de recevoir des taches
+387.379274 #16 arrete de recevoir des taches
+387.377833 #22 arrete de recevoir des taches
+387.377874 #18 arrete de recevoir des taches
+387.377873 #15 arrete de recevoir des taches
+387.377860 #21 arrete de recevoir des taches
+387.377969 #19 arrete de recevoir des taches
+387.378059 #26 arrete de recevoir des taches
+388.051624 #20 arrete de recevoir des taches
+388.050983 #27 arrete de recevoir des taches
+388.050483 #24 arrete de recevoir des taches
+388.050948 #14 arrete de recevoir des taches
+388.050856 #2 arrete de recevoir des taches
+388.051723 #3 arrete de recevoir des taches
+388.050569 #28 arrete de recevoir des taches
+388.050716 #23 arrete de recevoir des taches
+388.050817 #1 arrete de recevoir des taches
+388.050792 #6 arrete de recevoir des taches
+388.050880 #25 arrete de recevoir des taches
+388.050434 #29 arrete de recevoir des taches
+388.050634 #7 arrete de recevoir des taches
+388.051148 #10 arrete de recevoir des taches
+388.051040 #9 arrete de recevoir des taches
+388.051182 #31 arrete de recevoir des taches
+388.050937 #5 arrete de recevoir des taches
+388.050906 #11 arrete de recevoir des taches
+388.051050 #8 arrete de recevoir des taches
+388.056567 #12 arrete de recevoir des taches
+388.057862 #0 arrete de recevoir des taches
+390.235800 #13 arrete de recevoir des taches
+390.236955 #4 arrete de recevoir des taches
+390.870863 #16 fini, computed time 378.755158
+390.869543 #21 fini, computed time 378.558210
+390.870123 #0 fini, computed time 380.592901
+390.869703 #9 fini, computed time 386.238133
+390.869576 #22 fini, computed time 380.790103
+390.869633 #25 fini, computed time 380.804141
+390.868649 #13 fini, computed time 390.226592
+390.869246 #29 fini, computed time 378.710572
+390.869886 #14 fini, computed time 381.702079
+390.869721 #5 fini, computed time 384.830299
+390.869662 #6 fini, computed time 386.143574
+390.868849 #30 fini, computed time 382.091214
+390.870561 #17 fini, computed time 378.174438
+390.870792 #3 fini, computed time 384.706423
+390.869591 #7 fini, computed time 384.276412
+390.869878 #23 fini, computed time 383.104473
+390.870017 #19 fini, computed time 381.741401
+390.870267 #31 fini, computed time 381.649376
+390.870004 #15 fini, computed time 379.663219
+390.870084 #18 fini, computed time 380.689507
+390.871136 #20 fini, computed time 378.294245
+390.870235 #4 fini, computed time 382.423987
+390.870050 #24 fini, computed time 380.200808
+390.870367 #8 fini, computed time 386.663932
+390.870456 #1 fini, computed time 381.999602
+390.870196 #12 fini, computed time 387.368584
+390.870419 #28 fini, computed time 378.551663
+390.870721 #2 fini, computed time 383.238510
+390.871029 #27 fini, computed time 382.136438
+390.870627 #11 fini, computed time 387.222624
+390.871151 #10 fini, computed time 387.716579
+390.871022 #26 fini, computed time 383.720598
+cat log/proc*.log | sort -n > log/proc.log

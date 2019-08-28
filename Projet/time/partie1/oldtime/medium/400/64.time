@@ -1,0 +1,194 @@
+mpirun -n 64 -hostfile hostfile --map-by node ./pathtracerMPI 1280 1024 400
+#51 start
+#20 start
+#63 start
+#6 start
+#38 start
+#54 start
+#40 start
+#21 start
+#18 start
+#29 start
+#0 start
+#17 start
+#34 start
+#15 start
+#42 start
+#37 start
+#23 start
+#55 start
+#52 start
+#12 start
+#31 start
+#32 start
+#5 start
+#27 start
+#58 start
+#43 start
+#53 start
+#3 start
+#57 start
+#35 start
+#46 start
+#49 start
+#8 start
+#22 start
+#10 start
+#41 start
+#13 start
+#4 start
+#1 start
+#48 start
+#59 start
+#39 start
+#44 start
+#7 start
+#26 start
+#2 start
+#30 start
+#11 start
+#50 start
+#14 start
+#25 start
+#56 start
+#61 start
+#24 start
+#9 start
+#36 start
+#47 start
+#28 start
+#16 start
+#60 start
+#19 start
+#45 start
+#33 start
+#62 start
+137.324943 #56 arrete de recevoir des taches
+137.333773 #40 arrete de recevoir des taches
+139.774907 #3 arrete de recevoir des taches
+139.779064 #2 arrete de recevoir des taches
+140.012524 #52 arrete de recevoir des taches
+140.012269 #37 arrete de recevoir des taches
+140.012981 #5 arrete de recevoir des taches
+140.013109 #18 arrete de recevoir des taches
+140.013527 #17 arrete de recevoir des taches
+140.013455 #6 arrete de recevoir des taches
+140.013913 #0 arrete de recevoir des taches
+140.013408 #36 arrete de recevoir des taches
+140.013656 #24 arrete de recevoir des taches
+140.013526 #32 arrete de recevoir des taches
+140.013483 #11 arrete de recevoir des taches
+140.014182 #34 arrete de recevoir des taches
+140.013925 #4 arrete de recevoir des taches
+140.013820 #63 arrete de recevoir des taches
+140.014430 #51 arrete de recevoir des taches
+140.013759 #50 arrete de recevoir des taches
+140.013656 #1 arrete de recevoir des taches
+140.014837 #38 arrete de recevoir des taches
+140.014853 #23 arrete de recevoir des taches
+140.014153 #35 arrete de recevoir des taches
+140.016849 #57 arrete de recevoir des taches
+140.017109 #21 arrete de recevoir des taches
+140.016932 #12 arrete de recevoir des taches
+140.017050 #61 arrete de recevoir des taches
+140.016800 #13 arrete de recevoir des taches
+140.016323 #20 arrete de recevoir des taches
+140.017166 #29 arrete de recevoir des taches
+140.016899 #60 arrete de recevoir des taches
+140.016971 #53 arrete de recevoir des taches
+140.017007 #28 arrete de recevoir des taches
+140.016960 #9 arrete de recevoir des taches
+140.017151 #45 arrete de recevoir des taches
+140.016768 #25 arrete de recevoir des taches
+140.016539 #54 arrete de recevoir des taches
+140.017547 #44 arrete de recevoir des taches
+140.017643 #41 arrete de recevoir des taches
+140.017591 #55 arrete de recevoir des taches
+140.017065 #59 arrete de recevoir des taches
+140.017659 #58 arrete de recevoir des taches
+140.017515 #14 arrete de recevoir des taches
+140.017155 #16 arrete de recevoir des taches
+140.017768 #10 arrete de recevoir des taches
+140.017512 #62 arrete de recevoir des taches
+140.017591 #49 arrete de recevoir des taches
+140.017734 #22 arrete de recevoir des taches
+140.017548 #30 arrete de recevoir des taches
+140.017660 #26 arrete de recevoir des taches
+140.017849 #48 arrete de recevoir des taches
+140.017775 #15 arrete de recevoir des taches
+140.017965 #39 arrete de recevoir des taches
+140.017946 #27 arrete de recevoir des taches
+140.017735 #43 arrete de recevoir des taches
+140.017874 #19 arrete de recevoir des taches
+140.018037 #46 arrete de recevoir des taches
+140.018237 #31 arrete de recevoir des taches
+140.017339 #42 arrete de recevoir des taches
+140.017954 #7 arrete de recevoir des taches
+140.017208 #33 arrete de recevoir des taches
+140.018308 #47 arrete de recevoir des taches
+140.017517 #8 arrete de recevoir des taches
+140.783578 #33 fini
+140.784609 #0 fini
+140.784118 #36 fini
+140.784582 #17 fini
+140.784125 #43 fini
+140.784227 #1 fini
+140.784422 #41 fini
+140.784095 #30 fini
+140.784191 #62 fini
+140.784312 #31 fini
+140.784247 #49 fini
+140.784217 #16 fini
+140.784908 #34 fini
+140.784510 #63 fini
+140.784479 #32 fini
+140.784524 #48 fini
+140.784478 #28 fini
+140.784836 #38 fini
+140.784142 #42 fini
+140.784477 #9 fini
+140.784719 #10 fini
+140.784494 #60 fini
+140.784543 #11 fini
+140.784687 #35 fini
+140.784579 #46 fini
+140.783979 #37 fini
+140.784890 #6 fini
+140.784698 #14 fini
+140.784721 #22 fini
+140.784971 #24 fini
+140.784042 #54 fini
+140.784980 #4 fini
+140.784891 #15 fini
+140.784845 #5 fini
+140.784762 #47 fini
+140.784086 #3 fini
+140.784829 #56 fini
+140.784846 #12 fini
+140.784412 #25 fini
+140.784884 #39 fini
+140.785069 #44 fini
+140.785114 #7 fini
+140.784900 #26 fini
+140.785055 #2 fini
+140.785584 #51 fini
+140.785081 #57 fini
+140.784524 #59 fini
+140.785120 #27 fini
+140.785242 #58 fini
+140.784383 #20 fini
+140.785121 #19 fini
+140.785286 #23 fini
+140.785384 #21 fini
+140.785157 #18 fini
+140.784969 #50 fini
+140.785310 #40 fini
+140.785155 #52 fini
+140.784735 #8 fini
+140.785249 #53 fini
+140.785096 #45 fini
+140.785340 #55 fini
+140.785117 #13 fini
+140.785496 #29 fini
+140.785655 #61 fini
+cat log/proc*.log | sort -n > log/proc.log
