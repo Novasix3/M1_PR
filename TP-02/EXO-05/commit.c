@@ -5,18 +5,22 @@
 
 static int nextId = 0;
 
-struct commit_ops *construct_minor(){
-  struct commit_ops* c = (struct commit_ops*) malloc(sizeof(struct commit_ops));
-  c->display = &display_minor_commit;
-  c->extract = &extract_minor;
-  return c;
+struct commit_ops *construct_minor()
+{
+	struct commit_ops *c =
+	    (struct commit_ops *)malloc(sizeof(struct commit_ops));
+	c->display = &display_minor_commit;
+	c->extract = &extract_minor;
+	return c;
 }
 
-struct commit_ops *construct_major(){
-  struct commit_ops* c = (struct commit_ops*) malloc(sizeof(struct commit_ops));
-  c->display = &display_major_commit;
-  c->extract = &extract_major;
-  return c;
+struct commit_ops *construct_major()
+{
+	struct commit_ops *c =
+	    (struct commit_ops *)malloc(sizeof(struct commit_ops));
+	c->display = &display_major_commit;
+	c->extract = &extract_major;
+	return c;
 }
 
 /**
@@ -29,16 +33,17 @@ struct commit_ops *construct_major(){
   *
   * @return: retourne un pointeur vers la structure allouee et initialisee
   */
-struct commit *new_commit(unsigned short major, unsigned long minor, char *comment)
+struct commit *new_commit(unsigned short major, unsigned long minor,
+			  char *comment)
 {
-  struct version v = {.major = major, .minor = minor, .flags = 0};
-  struct commit* c = (struct commit*) malloc(sizeof(struct commit));
-  c->id = nextId++;
-  c->version = v;
-  c->comment = comment;
-  INIT_LIST_HEAD(&(c->lh));
-  INIT_LIST_HEAD(&(c->major_list));
-  c->major_parent = c;
+	struct version v = {.major = major,.minor = minor,.flags = 0 };
+	struct commit *c = (struct commit *)malloc(sizeof(struct commit));
+	c->id = nextId++;
+	c->version = v;
+	c->comment = comment;
+	INIT_LIST_HEAD(&(c->lh));
+	INIT_LIST_HEAD(&(c->major_list));
+	c->major_parent = c;
 	return c;
 }
 
@@ -53,7 +58,7 @@ struct commit *new_commit(unsigned short major, unsigned long minor, char *comme
   */
 static struct commit *insert_commit(struct commit *from, struct commit *new)
 {
-  list_add(&(new->lh), &(from->lh));
+	list_add(&(new->lh), &(from->lh));
 	return new;
 }
 
@@ -68,14 +73,15 @@ static struct commit *insert_commit(struct commit *from, struct commit *new)
   */
 struct commit *add_minor_commit(struct commit *from, char *comment)
 {
-  struct commit* c = new_commit(from->version.major, from->version.minor + 1, comment);
-  c->major_parent = from->major_parent;
-  c->ops = construct_minor();
-  return insert_commit(from, c);
+	struct commit *c =
+	    new_commit(from->version.major, from->version.minor + 1, comment);
+	c->major_parent = from->major_parent;
+	c->ops = construct_minor();
+	return insert_commit(from, c);
 }
 
 /**
-	* add_major_commit - genere et insere un commit correspondant a une version
+        * add_major_commit - genere et insere un commit correspondant a une version
   *                    majeure
   *
   * @from: commit qui deviendra le predecesseur du commit insere
@@ -85,11 +91,11 @@ struct commit *add_minor_commit(struct commit *from, char *comment)
   */
 struct commit *add_major_commit(struct commit *from, char *comment)
 {
-  struct commit* c = new_commit(from->version.major + 1, 0, comment);
-  c->major_parent = c;
-  c->ops = construct_major();
-  list_add(&(c->major_list), &(from->major_parent->major_list));
-  return insert_commit(from, c);
+	struct commit *c = new_commit(from->version.major + 1, 0, comment);
+	c->major_parent = c;
+	c->ops = construct_major();
+	list_add(&(c->major_list), &(from->major_parent->major_list));
+	return insert_commit(from, c);
 }
 
 /**
@@ -101,7 +107,7 @@ struct commit *add_major_commit(struct commit *from, char *comment)
   */
 struct commit *del_commit(struct commit *victim)
 {
-  victim->ops->extract(victim);
+	victim->ops->extract(victim);
 	return victim;
 }
 
@@ -112,16 +118,17 @@ struct commit *del_commit(struct commit *victim)
   *
   * @return: retourne un pointeur vers la structure extraite
   */
-void extract_major(struct commit* victim){
-  struct list_head* pos, *n;
-  struct commit* c = NULL;
-  list_for_each_safe(pos, n, &(victim->lh)){
-    c = container_of(pos, struct commit, lh);
-    if(c->version.major != victim->version.major)
-      break;
-    freeCommit(c);
-  }
-  freeCommit(victim);
+void extract_major(struct commit *victim)
+{
+	struct list_head *pos, *n;
+	struct commit *c = NULL;
+	list_for_each_safe(pos, n, &(victim->lh)) {
+		c = container_of(pos, struct commit, lh);
+		if (c->version.major != victim->version.major)
+			break;
+		freeCommit(c);
+	}
+	freeCommit(victim);
 }
 
 /**
@@ -131,8 +138,9 @@ void extract_major(struct commit* victim){
   *
   * @return: retourne un pointeur vers la structure extraite
   */
-void extract_minor(struct commit* victim){
-  freeCommit(victim);
+void extract_minor(struct commit *victim)
+{
+	freeCommit(victim);
 }
 
 /**
@@ -142,7 +150,7 @@ void extract_minor(struct commit* victim){
   */
 void display_commit(struct commit *c)
 {
-  c->ops->display(c);
+	c->ops->display(c);
 }
 
 /**
@@ -152,9 +160,9 @@ void display_commit(struct commit *c)
   */
 void display_minor_commit(struct commit *c)
 {
-  printf("%lu: ", c->id);
-  display_version(&c->version, &is_unstable_bis);
-  printf("'%s'\n", c->comment);
+	printf("%lu: ", c->id);
+	display_version(&c->version, &is_unstable_bis);
+	printf("'%s'\n", c->comment);
 }
 
 /**
@@ -164,9 +172,9 @@ void display_minor_commit(struct commit *c)
   */
 void display_major_commit(struct commit *c)
 {
-  printf("%lu: ### version ", c->id);
-  display_version(&c->version, &is_unstable_bis);
-  printf(" : '%s' ###\n", c->comment);
+	printf("%lu: ### version ", c->id);
+	display_version(&c->version, &is_unstable_bis);
+	printf(" : '%s' ###\n", c->comment);
 }
 
 /**
@@ -181,11 +189,12 @@ void display_major_commit(struct commit *c)
   */
 struct commit *commitOf(struct version *version)
 {
-  return container_of(version, struct commit, version);
+	return container_of(version, struct commit, version);
 }
 
-void freeCommit(struct commit* c){
-  list_del(&c->lh);
-  free(c->ops);
-  free(c);
+void freeCommit(struct commit *c)
+{
+	list_del(&c->lh);
+	free(c->ops);
+	free(c);
 }

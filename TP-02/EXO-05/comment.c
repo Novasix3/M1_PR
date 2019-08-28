@@ -4,47 +4,62 @@
 
 #include"comment.h"
 
-struct comment *new_comment(int title_size, char *title, int author_size, char *author,	int text_size, char *text){
+struct comment *new_comment(int title_size, char *title, int author_size,
+	char *author, int text_size, char *text)
+{
+
 	struct comment *c = (struct comment *) malloc(sizeof(struct comment));
 
-	if(title_size <= 0){
+	if (title_size <= 0) {
 		int temp = 0;
-		while(*(title + temp) != '\0')
+
+		while (*(title + temp) != '\0')
 			temp++;
 		c->title_size = temp+1;
-	}else
+	} else {
 		c->title_size = title_size;
+	}
 
-	if(! (c->title = malloc(c->title_size)))
+	c->title = malloc(c->title_size);
+
+	if (!c->title)
 		return NULL;
 	memcpy(c->title, title, c->title_size);
 
 
 
 
-	if(author_size <= 0){
+	if (author_size <= 0) {
 		int temp = 0;
-		while(*(author + temp) != '\0')
+
+		while (*(author + temp) != '\0')
 			temp++;
 		c->author_size = temp+1;
-	}else
+	} else {
 		c->author_size = author_size;
+	}
 
-	if(! (c->author = malloc(c->author_size)))
+	c->author = malloc(c->author_size);
+
+	if (!c->author)
 		return NULL;
 	memcpy(c->author, author, c->author_size);
 
 
 
-	if(text_size <= 0){
+	if (text_size <= 0) {
 		int temp = 0;
-		while(*(text + temp) != '\0')
+
+		while (*(text + temp) != '\0')
 			temp++;
 		c->text_size = temp+1;
-	}else
+	} else {
 		c->text_size = text_size;
+	}
 
-	if(! (c->text = malloc(c->text_size)))
+	c->text = malloc(c->text_size);
+
+	if (!c->text)
 		return NULL;
 	memcpy(c->text, text, c->text_size);
 

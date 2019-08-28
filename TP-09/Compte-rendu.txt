@@ -1,0 +1,33 @@
+Exercice 1 :
+
+1) Il s'agit d'une fonction renvoyant un long, prenant un long en paramètre qui correspond au nom de l'appel système que l'on définit. "syscall" prend aussi une liste de paramètres non-définis, que l'on définira en créant l'appel système. Son rôle est d'appeller un appel système en regardant la table en question, et en appelant la fonction correspondante.
+
+3) On créé un dossier "perso" dans le dossier des syscalls, puis on y met un Makefile simple qui va générer le .o d'un fichier .c contenant la définition de la macro. Ensuite on modifie la table des syscall en rajoutant un numéro avec notre appel système. Enfin, on make le kernel, et on fait un fichier qui va faire un appel système de ce qu'on vient de créer.
+
+4) On utilise current->pid.
+
+5) On modifie le syscall pour mettre un paramètre et on affiche avec un %s.
+
+6) Lorsque l'on appelle le syscall avec l'adresse obtenue en insérant le module one_addr, on voit le message "Si vous lisez ces lignes c'est bon signe :-) bonnes revisions !!!". Cela est dû au fait que l'on va afficher une chaîne de caractères qui se situe à n'importe quel endroit du kernel, c'est-à-dire potentiellement dans du code dangereux. POur le corriger, il suffit d'utiliser copy_from_user, ce qui ne marchera pas avec l'adresse donnée car celle-ci ne pointe sur rien côté utilisateur.
+
+7) On utilise deux buffer : un pour avoir le nom à afficher et un second pour contenir le résultat à afficher. On va également donner à l'appel système les tailles des deux buffers correspondants pour pouvoir les remplir avec les données de l'appel système en utilisant copy_from_user, scnprintf et copy_to_user.
+
+
+Exercice 2 :
+
+1) Envoyer SIGCONT à un processus inexistant renvoie une erreur. On peut donc utiliser cela pour comparer l'affichage du procfs et l'envoie de SIGCONT à tout les pids : si un pid n'est pas dans listé dans le procfs, mais un envoie de SIGCONT à ce proc ne génère pas d'erreur, il s'agit d'un processus caché.
+
+2) On doit bloquer le kill.
+
+3) Il n'y a pas d'appel système exportés.
+
+4) Etant donné qu'aucun appel système n'est exporté, on est forcé d'utiliser "kallsyms_lookup_name".
+
+5) Lorsque l'on tente cela, le noyau crash à cause d'une erreur de paging request.
+
+6) En faisant un "cat /proc/cpuinfo", on voit effectivement que "wp : yes", le bit concerné est positionné.
+
+7) On utilise donc "write_cr0(read_cr0() & (~ 0x10000));" et "write_cr0(read_cr0() | 0x10000);" pour enlever la protection et la remettre.
+
+8) Après avoir enlevé la protection, on sauvegarde la fonction originale et on remplace celle dans la table des syscall par notre nouvelle fonction.
+Ca c'est la théorie, mais "kallsyms_lookup_name" arrive pas à trouver la table, donc en fait ça marche pas.

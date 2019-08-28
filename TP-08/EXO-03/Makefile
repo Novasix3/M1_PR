@@ -1,0 +1,14 @@
+.PHONY: all 
+
+KERNELDIR_PNL ?= ../../linux-4.19.3
+PWD := $(shell pwd)
+
+obj-m += hide.o
+obj-m += weasel_vfs.o
+
+all :
+	$(info obj-m : $(obj-m))
+	make -C $(KERNELDIR_PNL) M=$(PWD) modules
+
+clean:
+	make -C $(KERNELDIR_PNL) M=$(PWD) clean

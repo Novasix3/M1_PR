@@ -1,0 +1,40 @@
+COMPTE-RENDU DU TP4 FAIT PAR YOANN VALERI
+
+
+Exercice 1 :
+
+1) Parmis les fichiers générés, seul le helloWorld.ko sera chargés dans le noyau.
+
+2) On peut voir le message "Hello World" à 3 endroits : lorsqu'on fait le insmod, dans la console où on a redirigé le port série;
+lorsque l'on fait "dmesg", à la toute fin des log; et enfin, à la fin de ce qui est affiché par "journalctl".
+
+3) On ajoute les deux variables en dehors des fonctions, puis on fait module_param. Ensuite, dans la fonction init, on fait une boucle for pour afficher howmany fois la chaîne demandée avec pr_info. On fait la même chose avec le exit.
+
+4) En faisant "modinfo", on voit que les paramètres n'ont pas de description. Donc on utilise MODULE_PARM_DESC dans le module.c pour modifier leur description. Cela se retranscrit après un nouveau "modinfo" de la version modifiée.
+
+5) Ayant déjà modifié la fonction d'exit, il me suffit d'aller /sys/modules/helloWorldParam/parameters, de modifier une des variable par ce que l'on veut, et le résultat s'affichera directement au prochain "rmmod" ou "insmod".
+
+Exercice 2 :
+
+1) La variable init_uts_ns se trouve dans /init/version.c et elle ne peut être accédée par tous les modules, seuls ceux ayant la licence GPL précisée.
+
+2) On crée un module dans lequel on importe <linux/utsname.h>, ce qui nous permet d'utiliser directement la structure concernée. Ensuite, on créé un tableau de char afin de conserver l'ancien nom, on utilise memcpy pour changer le tableau de char par l'ancien nom, et modifier l'ancien nom par un nouveau que l'on choisi. On n'oublie bien évidemment pas de remettre l'ancien nom à partir du tableau.
+
+3) Cela est nécessaire car le module est utilisé par tous les modules avec la licence GPL, et laisser un nom au hasard pourrait causer beaucoup de problèmes.
+
+Exercice 3 :
+
+1) Pour cette question, il nous faut utiliser iterate_supers en créant une fonction "void f(struct super_block *s, void *arg)". Le paramètre arg est inutile pour nous, mais la structure l'est beaucoup moins. Ainsi, après être allé consulté le code de la structure avec elixir, on voit que l'on a besoin d'afficher l'uid, disponible dans la structure, et que pour afficher le type, on doit passer par la structure "file_system_type". Après avoir fait cette fonction, on appelle dans l'init la fonction iterate_supers avec notre fonction spéciale en paramètre, et NULL en arg. Il nous faut cependant faire une autre chose : il faut que le noyau nous permette d'utiliser la fonction "iterate_supers", ce que l'on ne peut pas faire en temps normal. Ainsi, on va dans le fichier fs/super.c, là on se trouve la fonction dont on a besoin, et ajouter la ligne "EXPORT_SYMBOL(iterate_supers)", ce qui nous permet de l'utiliser ensuite comme on le désire, après avoir recompilé le noyau.
+
+2) Le problème principal pour cette question est la gestion du temps. La structure super_block ne possède pas de champs de temps comme on le désire. Donc on va chercher le fichier include/linux/fs.h et ajoute un champ de temps. Comme nous voulons utiliser la fonction "ktime_get" pour gérer le temps, nous rajoutons un champ "ktime_t s_time;" dans la structure, que nous n'oublions pas d'initialiser à 0 dans la fonction de création de super block ("alloc_super", dans super.c). Ensuite, nous modifions la fonction créé précedemment pour faire le nouvel affichage, en récupérant le temps actuel avec "ktime_get", soutrayant le temps dans le super block, l'affichant avec deux fonctions du noyau pour l'affichage de ktime, puis on le change avec le temps actuel. Enfin, dans la fonction init, on utilise les fonctions "get_fs_type" et "put_filesystem" pour récupérer le type de super_block que l'on cherche à afficher, et rendre la référence après utilisation. Il nous faut pour cela également aller dans certains fichier et ajouter des export_symbol.
+Les fonctions en place, il ne reste plus qu'à compiler le noyau, compiler le module, et tout marche comme demandé.
+
+Exercice 4 :
+
+1) insmod puis lsmod, le module est bien chargé.
+
+2) N'ayant pas plus d'information, j'ai décidé d'utiliser le fait que les modules soient membres d'une liste chainée. J'ai utilisé la fonction list_del pour retirer un élément de la liste des modules, en l'appelant de la sorte : "list_del(&(find_module("hideModule"))->list)". "find_module" renvoie une structure module grâce à son nom, donc ici je l'appelle avec le nom "hideModule", et je fait "list_del" avec ce que cette fonction renvoie. Ainsi, le module n'apparaît plus lorsque l'on fait "lsmod". Cependant, à cause de ce "list_del", il m'est impossible de faire un rmmod dessus.
+
+3) On vérifie si le dossier "hideModule" existe bien dans /sys/module, ce qui est le cas, malgré le "list_del" que l'on effectue. Donc le module est visible, malgré le fait qu'on ne puisse le "rmmod".
+
+4) Pour ne plus voir le module dans /sys/module, il faut appeller deux fonctions : "module_param_sysfs_remove" avec notre module, ce qui aura pour effet d'enlever les entrées des paramètres du module et des kobject correspondant du sysfs; et "kobject_del", ce qui permettra de délier le kobject avec sa hiérarchie. Ainsi, on fait "insmod" avec hideModule.ko, il n'apparaît pas dans "lsmod", et n'apparaît plus dans le sysfs.

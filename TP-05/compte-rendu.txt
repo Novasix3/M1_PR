@@ -1,0 +1,69 @@
+Exercice 1 :
+
+2) Le type de communication utilisé est TCP.
+
+3) On lance la machine virtuelle après avoir ajouté l'option de démarrage "kgdbwait", ce qui l'arrête tant que l'on ne se connecte pas avec gdb sur la machine hôte. Donc après cela, on fait "gdb linux-4.19/vmlinux", puis "target remote localhost:port" and le port défini dans le script. Dans notre cas, on fait "target remote localhost:1234", ce qui nous permet maintenant de débugger le noyau.
+
+4) "monitor ps" permet de faire "ps" sur la machine virtuelle, tandis que info thread donne l'état des threads.
+
+5) "continue" pour gdb sert à continuer l'exécution du programme, donc tant que l'on ne fait pas continue, le lancement du noyau reste bloqué en attente de kgdb.
+
+6) Faire le "echo" interrompt effectivement l'exécution du noyau, ce qui nous permet de débugger efficacement. L'exécution reprend dès lors qu'on fait un "continue".
+
+Exercice 2 :
+
+1) La structure est défini dans init/version.c, et contient plusieurs champs tels qu'un compteur de référence, un nom de domaine, une version ou encore différents opérateurs, ...
+
+2) On fait donc "print init_uts_ns" pour voir la structure est ses champs. Puis on fait "set init_uts_ns.name.sysname = "it's a me, Mario!"". Ensuite, on relance l'exécution avec continue, puis dans la VM, on lance la commande "uname", et le nom a effectivement changé.
+
+Exercice 3 :
+
+1) Lorsque le module est init, il génère un thread puis fait un warn et quitte. Le thread exécutera la fonction "my_hanging_fn" et ce même nom. La fonction en question mettra son statut à non-interruptible, attendra 60 secondes, fera un affichage et quittera.
+
+2) Le problème vient du fait que le thread est bloqué pendant plus de 30 secondes.
+
+3) On fait donc "make nconfig" -> kernel hacking -> debug lockups and hangs -> panic (reboot) on hung taks. Activer cette option, relancer la VM, "insmod" le module, et au bout d'un certain temps, la VM crash car il y a un panic à cause du thread.
+
+4) Lorsque la VM crash, la main est laissée à kgdb. Ensuite, on fait "backtrace" et on ne vois non pas le code du module, mais celui de la fonction ayant généré le panic. On remarque que celle-ci se trouve dans debug_core.c .
+
+6) La seconde adresse correspond à celle du segment data du module.
+
+7) La solution côté module est de changer le "set_current_state(TASK_UNINTERRUPTIBLE)" en "set_current_state(TASK_INTERRUPTIBLE)". Cela permet au kernel de pouvoir interrompre le thread lorsque celui-ci dépasse les 30 secondes.
+La seconde solutino est de changer dans la configuration du kernel le temps à partir duquel un hang-up est détecté. Il est de base set à 30 secondes, donc on peut le passer à 90, et il n'y aura plus de problème.
+
+Exercice 4 :
+
+1) Il n'y a aucun affichage car il s'agit de print pour le debug, et le kernel n'est pas en mode debug pas défaut.
+
+2) "echo -n 'module prdebug +p' > /sys/kernel/debug/dynamic_debug/control"
+Le "echo -n" permet d'éviter le passage à la ligne.
+le "'module prdebug +p'" dit que pour le module "prdebug", on va ajouter ('+') le flag 'p'. Ce flag permet d'afficher les "pr_debug()".
+Enfin, on redirige la sortie dans "/sys/kernel/debug/dynamic_debug/control".
+
+3) En lisant les trois lignes sous le 'p' dans la doc, on voit qu'il y a trois autres flags faisant ça, donc on remplace le "+p" du echo par "+pflm". Ensuite, avec un cat, on voit les nouvelles informations. 
+
+4) Il faut pour cela spécifier la ligne à afficher dans le echo. La commande devient donc :
+"echo -n 'module prdebug line 16 +pflm' > /sys/kernel/debug/dynamic_debug/control"
+Ensuite, avec un "dmesg", on voit exactement ce que l'on veut.
+
+Exercice 5 :
+
+2) Après chargement du module, la VM ne répond plus et un segfault est généré.
+
+3) La commande "backtrace" ne fonctionne pas et répond qu'elle ne peut accéder à l'adresse mémoire 0x100.
+La commande "monitor bt" nous donne seulement le fait que le segfault a eu lieu dans la fonction "print_stats".
+
+4) Le problème vient du list_del dans la seconde boucle foreach. Pour corriger cela, on peut utiliser "list_for_each_entry_safe" en rajoutant un pointeur temporaire, par exemple "prev".
+
+5) La VM crash encore, encore une fois à cause d'un list_del, celui deux lignes avant la fin de la fonction. Le problème vient donc la liste du first.
+
+6) Dans le "make nconfig", on active l'option "Kernel Hacking" -> "Debug linked list manipulation". Puis on recompile le tout et on relance le module. On a donc maintenant un magnifique "list_del corruption, ffff88007ccc6480->next is LIST_POISON1". Le problème vient donc du fait que l'on veut delete un noeud de la liste qui a déjà été delete, ce qui est logique car le list_del associé (deux lignes avant la fin de la fonction) a déjà été effectué sur la même variable avant la seconde boucle for. Donc on tente de delete une liste déjà delete.
+La correction est donc de simplement retirer ce second delete, qui n'a aucune utilité après le premier delete.
+
+7) Dans le "make nconfig", on active l'option "Kernel Hacking" -> "Memory Debugging" -> "Kernel memory leak detector" pour voir les leak mémoires après des free. On peut aussi actier l'option "Poison pages after freeing", au même endroit, étant donné que les prev et next des listes, lorsque deleted, pointent après-coup vers des LIST_POISON.
+Cependant, lorsque l'on tente de faire un "echo scan > /sys/kernel/debug/kmemleak" pour faire un scan de la mémoire, un message "echo : write : device busy" apparaît. Pour résoudre, on fait un "dmesg | grep kmemleak" pour voir les lignes du kmemeleak, et un problème de taille apparaît. Pour résoudre ce problème, on va dans le nconfig, "Kernel Hacking" -> "Memory Debugging" -> "Kernel memory leak detector" -> on passe le montant de "Maximum kmemleak early log entries" de 400 à 4000.
+Ensuite, on relance l'echo dans le VM, et on voit l'origine des fuites mémoires.
+
+8) En faisant un scan après insertion du module, kmemleak nous dit qu'il y a beaucoup leak mémoires après le premier print_stats.
+Pour en corriger plusieurs, on ajoute après le "list_del" dans "list_for_each_entry_safe" un "kfree".
+Le nombre de leak descend à 2. On "kfree" ensuite le first, et il n'y ainsi plus de leak mémoire.

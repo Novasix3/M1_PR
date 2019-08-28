@@ -1,0 +1,76 @@
+Exercice 1 :
+
+1) Il nous faut pour cela créer deux fonctions "hello_show" et "hello_store" qui ne feront rien pour l'instant mais sont nécessaires.
+Ensuite, on créé un "kobj_attribute" que l'on définit avec la macro "__ATTR(hello, 0664, hello_show, hello_store)". Cela signifie que l'on assigne directement certains champs du "kobj_attribute" avec les fonctions précédantes, le nom "hello" et les droits 0664.
+Ensuite, on remplis simplement la fonction "hello_show" avec un "pr_warn" qui fait ce que l'on veut.
+De plus, on fait un "sysfs_create_file" dans l'init, avec le champ "attribute" du "kobj_attribute", et le "sysfs_remove_file" correspondant dans l'exit.
+Enfin, lorsqu'on fait un "cat /sys/kernel/hello", on voit l'affichage que l'on veut.
+
+2) Pour cela, on va modifier les fonctions "hello_show" et "hello_store" et ajouter un buffer comme paramètre : la fonction "hello_store" va modifier son contenu avec scnprintf, tandis que "hello_show" fera le nouvel affichage.
+
+
+
+Exercice 2 :
+
+1) On crée donc le module avec un paramètre int major. Dans la fonction init, on créé une structure "file_operations" avec "kzalloc", pour la mettre à 0. Ensuite on appelle la fonction "register_chrdev" avec le paramètre 0 (pour que le noyau décide lui-même du numéro de major), le nom du périphérique "hello", et la structure fops créé juste avant. On récupère le résultat de la fonction dans major, car la fonction renvoie le numéro de major attribué s'il n'y a pas eu d'erreur, ou 0.
+Ensuite, la fonction d'exit, si le numéro de major est différent de 0, on appelle "unregister_chrdev" avec le major et le nom "hello", pour retirer le périphérique.
+Enfin, après avoir load le module, on vois le major attribué, puis en cherchant dans le /proc/devices, on voit le même numéro de périphérique au nom "hello".
+
+2) Tout d'abord, on ajoute une fonction "hello_ioctl" dans le module, qui sera ajouté dans la structure "fil_operations" que nous utilisons pour faire le "register_chrdev". Cette fonction prend en paramètre un file*, un unsigned int qui correspond à une commande (qui sera dans notre cas la commande "HELLO") et un unsigned long, correspondant à une zone mémoire utilisateur où on récupèrera/mettra les données. On ajoute ensuite en paramètre un buffer, contenant le message "Hello ioctl !". Puis dans la fonction, on fait un switch sur la commande passée en argument, et si c'ets "HELLO", on fait une série de "put_user" pour mettre le contenu de notre buffer dans la zone mémoire pointée par l'unsigned long avec lequel la fonction "ioctl" côté utilisateur a été appelée. On oublie bien évidemment pas de d'ajouter un '\0' à la fin du buffer, pour garantir la validité des données.
+Dans un second temps, on crée un fichier "request.h" dans lequel on défini la macro "HELLO", à l'aide de la macro "_IOR", du nombre magique 'N' et du type que l'on souhaite échanger, ici, un char*.
+Enfin, côté utilisateur, on créé un fichier "request.c" qui créé un buffer, ouvre le fichier "/dev/hello", puis utilise ioctl avec la commande "HELLO" et le buffer, et l'affiche.
+Après avoir fait tout cela, on insère le module, "mknod /dev/hello c nb 0" (avec nb le numéro de majeur), et on appelle le binaire généré dans la machîne hôte, ce qui nous affiche la chaîne "Hello ioctl !".
+
+3) Pour cela, on ajoute une macro "WHO" dans "request.h" avec le même nombre magique, et du même type.
+Ensuite, on ajoute le test de l'appel "ioctl" côté utilisateur avec la nouvelle macro.
+Enfin, on ajoute un nouveau case dans le module : lorsqu'on voit la macro "WHO", on créé un char* temporaire qui va servir à chercher la taille du message donné en argument par l'utilisateur à l'aide de la fonction "get_user". Après, on modifie notre buffer avec un scnprintf.
+On réinsère le module, rappelle le binaire, et on voit la modification directement.
+
+
+
+Exercice 3 :
+
+1) 
+struct pid
+{
+	atomic_t count; 			-> correspond au nombre de références au processus en question
+	unsigned int level;			-> correspond au niveau du namespace dans lequel le processus est
+	struct hlist_head tasks[PIDTYPE_MAX];	-> liste des tâches faisant référence à ce pid
+	struct rcu_head rcu;			-> liste de fonction d'update du processus
+	struct upid numbers[1];			-> structure contenant le numéro du processus dans son namespace et le namespace associé
+};
+
+Cette structure est donc celle du pid, définissant son id, le nombres de références, le namespace ainsi que les tâches utilisant ce pid. Ce n'est cependant pas la structure d'un processus, qui elle est la structure "task_struct", contenant l'adresse de la stack, et autres.
+
+2) L'unité de mesure utilisé pour les utime et stime sont des ticks d'horloges.
+
+3) Le task_struct possède une référence vers une struct pid, qui sera son pid. Elle possède également des lien vers son node dans la liste des tâches utilisant ce pid, par un hlist_node.
+La structure pid quant à elle, contient une liste de référence vers des têtes de liste de processus utilisant ce pid.
+
+
+Exercice 4 :
+
+1) On définit donc le module avec un paramètre int target modifiable, et un struct pid struct_pid. On définit la fonction "monitor_pid", qui va faire le "find_get_pid" pour remplir struct_pid, et check si le résultat est null ou pas. En insérant le module avec un pid non présent (obtenu en regardant ps aux), le module est effectivement non inséré.
+
+2) On créé la structure et un champ monitored de cette structure. On modifie ensuite la fonction "monitor_pid" pour modifier la structure en question, change la vérification et cela marche.
+Il faut put la référence à l'exit, mais avant de free la structure contenant la référance.
+
+3) Une manière simple de garder la "task_struct" est de rajouter un champ dans la structure défini dans le module. Ensuite dans le module on créé un thread avec "kthread_run" qui va effectuer la fonction "monitor_fn", avec dans l'exit le "kthread_stop". On définit la fonction "monitor_fn", qui va récupérer avec "get_pid_task" la "task_struct" associé au pid que nous récupérons avant. On lance le while avec comme condition d'arrêt la mort du processus monitoré et l'abscence de signal de fin pour le thread, et dans le thread, on affiche le fait que le processus est vivant, ainsi que les utime et stime, récupérés par la "task_struct" obtenu avant.
+Enfin, en sortant de la boucle, le thread va rendre la référence du processus avec "put_task_struct".
+
+
+Exercice 5 :
+
+1) De la même manière que l'exercice 1 : on définit la structure "task_sample", créé un buffer "taskmonitor", les fonctions "taskmonitor_store", "taskmonitor_show" et "get_sample", puis on créé le "kobj_attribute", récupère l'attribut associé et fait le "sysfs_create_file" de ce qu'il faut.
+
+2) On modifie donc la fonction "taskmonitor_store" en ajoutant des "strcpm", qui lance le thread si un start a été demandé et qu'il n'y a pas déjà de thread qui tourne, et qui stop le thread si un stop est demandé et que le thread tourne.
+
+Exercice 6 :
+
+1) On récupère ce qui a été fait pour l'exercice 2, en modifiant quelque peu les noms.
+
+2) On récupère ce qui a été fait pour l'exercice 5, place aux bons endroits, supprime tout ce qui a atrait au sysfs, et laisse le reste (par exemple laisser le thread, et enlever les taskmonitor_show et autres). Ensuite on créé la requête "GET_SAMPLE", modifie les noms et write des buffers, et tout marche normalement.
+
+3) On utilise des mécanismes et vérifications similaires à l'exercice 5, sans "strcmp" cette fois. Puis on teste dans le request.c, et tout marche normalement.
+
+4) On créé la requête, et quand celle-ci est appelée, stop le thread pour éviter des problèmes d'accès concurrents, rappelle "monitor_pid" avec l'entier récupéré en paramètre du "ioctl", puis relance le thread dessus.

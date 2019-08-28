@@ -1,0 +1,30 @@
+Exercice 1 :
+
+1) Cela modifie les sources pour appliquer les modifications du patch.
+
+2) On ne peut l'utiliser dans nos modules car elle est static. Il suffit donc d'enlever ce static et d'exporter la variable.
+
+3) on créé un nouveau fichier dcache-old.c qui contient l'ancienne version avec le static, puis on fait un diff des deux, redirigé dans un fichier .patch, que l'on xz ensuite.
+
+Exercice 2 :
+
+1) Pour déterminer le nombre de listes, il suffit de prendre un entier non signé avec tout ses bits à 1, puis shift vers la droite avec d_hash_shift. Cela nous donnera le nombre de listes.
+
+2) On utilise extern pour récupérer les variables d_hash_shift. En affichant l'adresse, puis en faisant un décalage vers de d_hash_shift vers la droite de -1 cast en unsigned int, on obtient la taille de la liste, 2^16-1.
+
+3) On utilise la macro "hlist_bl_for_each_entry" avec un dentry temporaire et un hlist_bl_node temporaire, qui sera utilisée pour compter le nombre d'éléments, tout en gardant un suivi de la liste ayant le plus d'éléments. La taille, très exacte et très belle de la liste, est 2^16 - 1, ce qui est bien.
+
+4) On utilise "proc_mkdir" et "proc_create" pour créer le dossier et fichier, puis on construit un fops qui sera utilisé avec les seq_file pour faire l'affichage.
+
+5) On rajoute un autre fichier avec un fops associé, dans la fonction d'affichage, on parcours la table de hash et regarde chaque élément, puis en utilisant "dentry_path_raw", on affiche le chemin complet de chaque dentry.
+
+6) On fait un cat de la liste redirigé dans un fichier temporaire, fait une commande inexistante, refait un cat redirigé, puis on affiche la diff des deux fichiers, et on voit que lorsqu'on fait la command inexistante, il va mettre la table de hash le lien potentielle de cette commande, à partir du $PATH, tout en essayant de les ouvrir, d'où l'erreur.
+
+7) On créé un autre fichier, un autre fops, on associe les deux, on parcours la liste, et on check si la dentry->d_inode est null ou pas, puis on affiche si c'est le cas.
+
+Exercice 3 :
+
+1) On utilise "filp_open("/proc", O_RDWR, 0)" pour ouvrir la struct file associé au procfs.
+
+2) On créé une nouvelle "struct file_operations", on "memcpy" la "struct file_operations" récupéré depuis "file->f_inode->i_fop" dans l'ancienne (qui nous servira comme sauvegarde pour le déchargement du module). Ensuite on modifie la fonction "iterate_shared" de ce qu'on vient de "memcpy" par une nouvelle fonction "my_iterate" et on réaffecte la "struct file_operations" du procfs par notre structure.
+Après on défini la fonction my_iterate qui va faire les bonnes sauvegardes, changement de contexte et changement de fonction pour la fonction "my_actor". Cette dernière est défini pour comparer le nom du dossier que l'on regarde actuellement, et si c'est le même que celui qu'on essaye de cacher, on renvoie 0, sinon, on renvoie le résultat normal.
